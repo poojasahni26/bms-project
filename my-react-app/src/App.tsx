@@ -1,5 +1,5 @@
 import React from 'react';
-import AnalyticsCards from './components/AnalyticsCards';
+import { AnalyticsCards } from './components/AnalyticsCards';
 
 const App: React.FC = () => {
   return (

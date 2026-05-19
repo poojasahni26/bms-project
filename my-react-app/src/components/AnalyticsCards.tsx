@@ -17,3 +17,14 @@ export const PaymentStatusPie: React.FC = () => {
         </div>
     );
 };
+
+export const AnalyticsCards: React.FC = () => {
+    return (
+        <div>
+            <RevenueChart />
+            <PaymentStatusPie />
+        </div>
+    );
+};
+
+export default AnalyticsCards;
