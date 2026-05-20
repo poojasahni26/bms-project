@@ -26,32 +26,32 @@ export default function DashboardPage() {
             </div>
             <div className="flex flex-col">
               <span className="text-white font-medium text-sm">Operations Manager</span>
-              <span className="text-slate-400 text-xs">Admin User</span>
+              <span className="text-white text-xs">Admin User</span>
             </div>
           </div>
 
           <nav className="flex-1 space-y-1">
-            <Link href="/dashboard" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
               <span className="material-symbols-outlined">dashboard</span>
               <span className="text-sm font-medium">Dashboard</span>
             </Link>
-            <Link href="/dashboard/invoices" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <Link href="/dashboard/invoices" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
               <span className="material-symbols-outlined">receipt_long</span>
               <span className="text-sm font-medium">Invoices</span>
             </Link>
-            <Link href="/dashboard/payments" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <Link href="/dashboard/payments" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
               <span className="material-symbols-outlined">payments</span>
               <span className="text-sm font-medium">Payments</span>
             </Link>
-            <Link href="/dashboard/clients" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <Link href="/dashboard/clients" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
               <span className="material-symbols-outlined">group</span>
               <span className="text-sm font-medium">Clients</span>
             </Link>
-            <Link href="/dashboard/reports" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <Link href="/dashboard/reports" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
               <span className="material-symbols-outlined">analytics</span>
               <span className="font-inter text-sm font-medium">Reports</span>
             </Link>
-            <Link href="/dashboard/settings" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all duration-200">
+            <Link href="/dashboard/settings" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all duration-200">
               <span className="material-symbols-outlined">settings</span>
               <span className="font-inter text-sm font-medium">Settings</span>
             </Link>
@@ -64,8 +64,8 @@ export default function DashboardPage() {
           {/* Top Bar */}
           <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center px-6 py-3 sticky top-0 z-40">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-blue-500 cursor-pointer">menu</span>
-              <h1 className="text-lg font-bold text-blue-500">Billing Management</h1>
+              <span className="material-symbols-outlined text-[#001f3f] cursor-pointer">menu</span>
+              <h1 className="text-lg font-bold text-[#001f3f]">Billing Management</h1>
             </div>
             
             <div className="flex-1 max-w-xl px-12">
@@ -184,12 +184,12 @@ export default function DashboardPage() {
                   <div className="relative">
                     <div className="absolute -left-[31px] top-1 w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
                     <p className="text-sm font-medium">Invoice #INV-8821 Paid</p>
-                    <p className="text-[10px] text-slate-500">2 minutes ago</p>
+                    <p className="text-[10px] text-white">2 minutes ago</p>
                   </div>
                   <div className="relative">
                     <div className="absolute -left-[31px] top-1 w-2 h-2 rounded-full bg-blue-500"></div>
                     <p className="text-sm font-medium">New Client Added</p>
-                    <p className="text-[10px] text-slate-500">45 minutes ago</p>
+                    <p className="text-[10px] text-white">45 minutes ago</p>
                   </div>
                 </div>
               </div>
