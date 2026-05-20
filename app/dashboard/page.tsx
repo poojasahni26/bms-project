@@ -11,7 +11,7 @@ export default function DashboardPage() {
       <div className="text-[#191c1d] bg-[#f8f9fa] font-['Inter'] min-h-screen">
         
         {/* Navigation Drawer */}
-        <aside className="h-full w-64 fixed left-0 top-0 z-50 bg-slate-900 border-r border-slate-800 shadow-2xl flex flex-col py-6">
+        <aside className="h-full w-64 fixed left-0 top-0 z-50 bg-blue-500 border-r border-blue-500 shadow-2xl flex flex-col py-6">
           <div className="px-6 mb-8">
             <span className="text-white text-xl font-black">BMS Institutional</span>
           </div>
@@ -64,8 +64,8 @@ export default function DashboardPage() {
           {/* Top Bar */}
           <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center px-6 py-3 sticky top-0 z-40">
             <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-slate-900 cursor-pointer">menu</span>
-              <h1 className="text-lg font-bold text-slate-900">Billing Management</h1>
+              <span className="material-symbols-outlined text-blue-500 cursor-pointer">menu</span>
+              <h1 className="text-lg font-bold text-blue-500">Billing Management</h1>
             </div>
             
             <div className="flex-1 max-w-xl px-12">
@@ -94,7 +94,7 @@ export default function DashboardPage() {
                 <p className="text-slate-500 text-sm">Financial performance tracking for Q3 Fiscal Year</p>
               </div>
               <Link href="/dashboard/issue" 
-               className="bg-[#000613] text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
+               className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
                   >
                 Issue Invoice
                </Link>
@@ -178,7 +178,7 @@ export default function DashboardPage() {
               </div>
 
               {/* System Events */}
-              <div className="bg-slate-900 p-8 rounded-xl shadow-xl text-white">
+              <div className="bg-blue-500 p-8 rounded-xl shadow-xl text-white">
                 <h3 className="text-lg font-bold mb-6">System Events</h3>
                 <div className="space-y-6 relative border-l border-slate-700 ml-2 pl-6">
                   <div className="relative">

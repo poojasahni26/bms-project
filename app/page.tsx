@@ -138,15 +138,7 @@ export default function LoginPage() {
             <div className="flex justify-center space-x-5">
               
               {/* Google Integration Trigger */}
-              <button type="button" className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-50 transition-transform active:scale-90">
-                <Image 
-                  alt="Google" 
-                  className="w-5 h-5" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW8FZT9etBX_x5dyUpxYUE15AXqnBSW3md1Wohuqq-_CqKOa4tRFL3rwrPmhHLa91Z2fEujawBCoHW7LYCdG-Y50h1w97_pePWsbXQvM_fwUfb5j6iMJbxaTRPLjc8StMctXTbwwMk0xlNLO5AMMiNwzCFUfQvYrnmfZQO2IZxHSmpK_g0bqPiEQ55lSEjcDuPu5USEapLfyfcZ9YKlxIYCI03j3fDunyghi7y_4hAY195s5VKBiedHcG_pjr-CGEclq99LKa8ywY" 
-                  width={20}
-                  height={20}
-                />
-              </button>
+              
 
               {/* Facebook Button */}
               <button type="button" className="w-12 h-12 flex items-center justify-center rounded-full bg-[#3b5998] text-white shadow-md transition-transform active:scale-90">
