@@ -129,12 +129,6 @@ export default function LoginPage() {
               >
                 Login Now
               </button>
-              <Link 
-                href="/register"
-                className="flex-1 bg-white border border-gray-100 hover:bg-gray-50 text-gray-500 font-medium py-4 rounded-full shadow-sm transition-all active:scale-95 text-center block"
-              >
-                Create Account
-              </Link>
             </div>
           </form>
 
