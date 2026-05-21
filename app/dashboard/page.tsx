@@ -31,8 +31,8 @@ export default function Dashboard() {
           <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
         </div>
 
-        <nav className="flex-1 space-y-1 text-l">
-          <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+        <nav className="flex-1 space-y-1 text-lg px-4">
+          <Link href="/dashboard" className="text-white  hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
@@ -58,15 +58,17 @@ export default function Dashboard() {
           </Link>
         </nav>
 
-        <div className="p-6 border-t border-[#c9c4d8]">
-          <div className="flex items-center gap-3 p-2">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-100 bg-slate-200">
-              <img alt="User profile" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE6sgPPA-doukGexFwSQP5EuKCqMA1uftv0kSgpYvS828__BjOgSO6WVo9DDMoVZxzh9kpT5mIKYbdBfgQShropS3hAP-_krXbOsw28p3qTxRYKhT1bsMjD391ANXLJTKlXluhR0X5JD7HckfSdnLFKFkcDkekbBkBkkx1qHzTHiTVK4qVQhvJoidH4OzAHZaELxkQtB-jvw0lWrJKnvtele9MIgwjiuwlWswqlvFk9__puP3afGAMURCzNEiRJTORzhxDo6HBM9E" />
-            </div>
-            <div className="overflow-hidden">
-              <p className="text-sm font-semibold text-[#181c21] truncate">Alex Executive</p>
-              <p className="text-xs uppercase tracking-wider font-semibold text-[#484555] truncate">Admin Account</p>
-            </div>
+         <div className="px-6 mb-10 flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 relative">
+            <img
+              alt="Operations Manager"
+              className="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz3welp1P-T7tg1mJzAFynbnlVZ8e5H4GQrAr6L54LsLghsdytfyEXCVRz6A0zZvyDRxfSDFenpHBRyJ5msC3QJtRpXLMKCBe-KTyWna1AukHJUlz2uGouseZZou67wdTZc9Vjux24wzSg0SRRjxmm6aR9SzI8AS2Jtb-CGY6lv6ej3O7FHquqDG5uUqrckmYyByfBU_DkVyrC1oFxQlsGfkCRhzWb3-uSHG4L_fvRXQUhk_r3nQBdHpvgtKa-NiKbKsc6IFomf8I"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-white font-medium text-sm">Operations Manager</span>
+            <span className="text-slate-400 text-xs">Admin User</span>
           </div>
         </div>
       </aside>
@@ -101,9 +103,9 @@ export default function Dashboard() {
               <span className="absolute top-2 right-2 w-2 h-2 bg-[#ba1a1a] rounded-full border-2 border-white"></span>
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#064e3b] flex items-center justify-center text-white font-bold text-sm shadow-sm overflow-hidden cursor-pointer">
-                <img alt="User profile" className="w-full h-full object-cover" src="https://www.google.com/search?sca_esv=e4967f2aa746cbdf&sxsrf=ANbL-n6-Sq31LNgHDRuz-lntKP_x0UnPvQ:1779347053003&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3ppPEReeCOS7s1VbbZz2TLt2sOibMbYx2XAHg-v8xM5VMjbOMePxx0DsGneV4EHbo23HMfPcf4hPbnvEH8cgcBShifWMW1NXsjI7K3vNe7eUyEnfYDYdppHZoHBlWtiJPlLmvYuel8UQZlfMnjP1DhbVBGMI6cdN1AmLTQAXbdNCbZ9KHw&q=green+telecom+tanzania+logo&sa=X&ved=2ahUKEwjT4Jqo6MmUAxUGqVYBHTNlFlgQtKgLegQIFhAB&biw=1280&bih=585&dpr=1.5#sv=CAMSVhoyKhBlLXlkOEJQRUNvNkJ4aFZNMg55ZDhCUEVDbzZCeGhWTToOOWVzcG9ZOGctS3Fxd00gBCocCgZtb3NhaWMSEGUteWQ4QlBFQ282QnhoVk0YADABGAcgiebChgtKCBABGAEgASgB" />
-              </div>
+              <div className="w-8 h-8 rounded-full bg-[#064e3b] flex items-center justify-center text-white text-xs font-bold">
+              GT
+            </div>
             </div>
           </div>
         </header>
