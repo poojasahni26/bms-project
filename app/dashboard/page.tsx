@@ -58,7 +58,7 @@ export default function Dashboard() {
           </Link>
         </nav>
 
-        {/* User Profile Footer (Fixed text-white to text-slate-800) */}
+        {/* User Profile Footer */}
         <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
             <img
@@ -101,7 +101,7 @@ export default function Dashboard() {
           <div className="flex items-center gap-2 md:gap-4">
             <button className="p-2 hover:bg-[#f0f4fb] rounded-full transition-colors relative">
               <span className="material-symbols-outlined text-[#064e3b]">notifications</span>
-              <span className="absolute top-2 right-2 w-2 h-2 bg-[#ba1a1a] rounded-full border-2 border-white"></span>
+              <span className="absolute top-2 right-2 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
               <div className="w-8 h-8 rounded-full bg-[#064e3b] flex items-center justify-center text-white text-xs font-bold">
@@ -124,7 +124,6 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="hidden md:flex gap-2">
-              {/* FIXED: Changed lowercase <link> to capitalized <Link> */}
               <Link href="/dashboard/issue" className="px-4 py-2 bg-[#064e3b] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md">
                 Issue Invoice
               </Link>
@@ -134,7 +133,7 @@ export default function Dashboard() {
           {/* Metric Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {/* Total Revenue */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-orange-500 to-orange-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+            <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
               <div className="flex justify-between items-start mb-4">
                 <p className="text-base font-semibold opacity-90">Total Revenue</p>
                 <span className="material-symbols-outlined opacity-80">trending_up</span>
@@ -164,7 +163,7 @@ export default function Dashboard() {
             </div>
 
             {/* Overdue Payments */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-emerald-800 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+            <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
               <div className="flex justify-between items-start mb-4">
                 <p className="text-base font-semibold opacity-90">Overdue Payments</p>
                 <span className="material-symbols-outlined opacity-80">warning</span>
@@ -182,7 +181,7 @@ export default function Dashboard() {
                 <h3 className="text-lg font-bold text-[#181c21]">Revenue vs. Expenses</h3>
                 <div className="flex gap-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-emerald-600"></div>
                     <span className="text-xs font-semibold text-[#484555]">Revenue</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -206,7 +205,7 @@ export default function Dashboard() {
                 ].map((bar, i) => (
                   <div key={i} className="flex-1 flex flex-col items-center gap-2 h-full justify-end">
                     <div 
-                      className={`w-full rounded-t-lg transition-all duration-500 hover:opacity-80 ${bar.focus ? 'bg-orange-500 shadow-md' : 'bg-orange-500/30'}`} 
+                      className={`w-full rounded-t-lg transition-all duration-500 hover:opacity-80 ${bar.focus ? 'bg-emerald-600 shadow-md' : 'bg-emerald-600/30'}`} 
                       style={{ height: bar.rev }}
                     />
                     <div 
@@ -223,7 +222,7 @@ export default function Dashboard() {
             <div className="bg-white p-8 rounded-3xl shadow-sm flex flex-col border border-[#c9c4d8]/20">
               <h3 className="text-lg font-bold text-[#181c21] mb-8">Traffic Sources</h3>
               <div className="relative flex justify-center items-center flex-grow py-6">
-                <div className="w-48 h-48 rounded-full border-[24px] border-orange-500 relative flex items-center justify-center">
+                <div className="w-48 h-48 rounded-full border-[24px] border-emerald-600 relative flex items-center justify-center">
                   <div className="absolute inset-0 w-full h-full rounded-full border-[24px] border-transparent border-t-sky-500 border-r-teal-500 transform rotate-45"></div>
                   <div className="text-center">
                     <p className="text-2xl font-bold text-[#064e3b]">82%</p>
@@ -233,7 +232,7 @@ export default function Dashboard() {
               </div>
               <div className="space-y-4 mt-4">
                 {[
-                  { color: 'bg-orange-500', source: 'Search Engines', pct: '30%' },
+                  { color: 'bg-emerald-600', source: 'Search Engines', pct: '30%' },
                   { color: 'bg-sky-500', source: 'Direct Click', pct: '30%' },
                   { color: 'bg-teal-500', source: 'Bookmarks Click', pct: '40%' }
                 ].map((item) => (
@@ -269,7 +268,7 @@ export default function Dashboard() {
                   <tr className="hover:bg-[#f0f4fb]/50 transition-colors cursor-pointer group">
                     <td className="py-5">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 font-bold">T</div>
+                        <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800 font-bold">T</div>
                         <div>
                           <p className="text-base text-[#181c21] font-semibold">TechCorp Inc.</p>
                           <p className="text-xs font-semibold text-[#484555]">Software Subscriptions</p>
@@ -278,14 +277,14 @@ export default function Dashboard() {
                     </td>
                     <td className="py-5 text-sm text-[#484555] font-mono">INV-88219</td>
                     <td className="py-5">
-                      <span className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-bold">Completed</span>
+                      <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold">Completed</span>
                     </td>
                     <td className="py-5 text-right font-bold text-[#181c21]">$12,450.00</td>
                   </tr>
                   <tr className="hover:bg-[#f0f4fb]/50 transition-colors cursor-pointer group">
                     <td className="py-5">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold">G</div>
+                        <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 font-bold">G</div>
                         <div>
                           <p className="text-base text-[#181c21] font-semibold">Global Logistics</p>
                           <p className="text-xs font-semibold text-[#484555]">Shipping Services</p>
@@ -301,7 +300,7 @@ export default function Dashboard() {
                   <tr className="hover:bg-[#f0f4fb]/50 transition-colors cursor-pointer group">
                     <td className="py-5">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-red-600 font-bold">S</div>
+                        <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-800 font-bold">S</div>
                         <div>
                           <p className="text-base text-[#181c21] font-semibold">SkyNet Solutions</p>
                           <p className="text-xs font-semibold text-[#484555]">Cloud Infrastructure</p>
@@ -310,9 +309,9 @@ export default function Dashboard() {
                     </td>
                     <td className="py-5 text-sm text-[#484555] font-mono">INV-88501</td>
                     <td className="py-5">
-                      <span className="bg-red-200 text-red-800 px-3 py-1 rounded-full text-xs font-bold">Overdue</span>
+                      <span className="bg-blue-900 text-blue-100 px-3 py-1 rounded-full text-xs font-bold">Overdue</span>
                     </td>
-                    <td className="py-5 text-right font-bold text-red-600">$4,230.50</td>
+                    <td className="py-5 text-right font-bold text-blue-800">$4,230.50</td>
                   </tr>
                 </tbody>
               </table>
