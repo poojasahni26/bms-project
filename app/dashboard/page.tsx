@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from "next/link";
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,23 +31,31 @@ export default function Dashboard() {
           <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
         </div>
 
-        <nav className="flex-grow px-4 space-y-1 mt-4">
-          <a className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#064e3b]/10 text-[#064e3b] font-semibold transition-all" href="#">
+        <nav className="flex-1 space-y-1">
+          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
             <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-base">Dashboard</span>
-          </a>
-          {[
-            { icon: 'group', label: 'Clients' },
-            { icon: 'description', label: 'Invoices' },
-            { icon: 'assessment', label: 'Reports' },
-            { icon: 'payments', label: 'Payments' },
-            { icon: 'settings', label: 'Settings' }
-          ].map((item) => (
-            <a key={item.label} className="flex items-center gap-3 px-4 py-3 rounded-xl text-[#064e3b] hover:bg-[#f0f4fb] transition-all" href="#">
-              <span className="material-symbols-outlined">{item.icon}</span>
-              <span className="text-base">{item.label}</span>
-            </a>
-          ))}
+            <span className="text-sm font-medium">Dashboard</span>
+          </Link>
+          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <span className="material-symbols-outlined">receipt_long</span>
+            <span className="text-sm font-medium">Invoices</span>
+          </Link>
+          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <span className="material-symbols-outlined">payments</span>
+            <span className="text-sm font-medium">Payments</span>
+          </Link>
+          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 bg-slate-800 transition-all">
+            <span className="material-symbols-outlined">group</span>
+            <span className="text-sm font-medium">Clients</span>
+          </Link>
+          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+            <span className="material-symbols-outlined">analytics</span>
+            <span className="text-sm font-medium">Reports</span>
+          </Link>
+          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all duration-200">
+            <span className="material-symbols-outlined">settings</span>
+            <span className="text-sm font-medium">Settings</span>
+          </Link>
         </nav>
 
         <div className="p-6 border-t border-[#c9c4d8]">
