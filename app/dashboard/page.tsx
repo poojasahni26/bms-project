@@ -31,8 +31,8 @@ export default function Dashboard() {
           <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
         </div>
 
-        <nav className="flex-1 space-y-1">
-          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+        <nav className="flex-1 space-y-1 text-l">
+          <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#064e3b] flex items-center justify-center text-white font-bold text-sm shadow-sm overflow-hidden cursor-pointer">
-                <img alt="User profile" className="w-full h-full object-cover" src="https://www.google.com/search?q=green+telecom+logo&oq=green+telecom+logo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQABiGAxiABBiKBTIKCAIQABiABBiiBDIKCAMQABiABBiiBDIHCAQQABjvBTIHCAUQABjvBTIHCAYQABjvBdIBCDc0NTJqMGo3qAIIsAIB8QXzkO6J3L_m2w&sourceid=chrome&ie=UTF-8#sv=CAMSZxowKg5uTnF6T1VLNU45dGJnTTIObk5xek9VSzVOOXRiZ006Dk1QVG12cjZMblJUMDFNIAQqLwobX0I2d09hcXVRSE5iZTJyb1BocTJsd0FFXzQ0Eg5uTnF6T1VLNU45dGJnTRgAMAEYByDXspXBCEoIEAEYASABKAE" />
+                <img alt="User profile" className="w-7 h-3 object-cover" src="https://www.google.com/search?q=green+telecom+logo&oq=green+telecom+logo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQABiGAxiABBiKBTIKCAIQABiABBiiBDIKCAMQABiABBiiBDIHCAQQABjvBTIHCAUQABjvBTIHCAYQABjvBdIBCDc0NTJqMGo3qAIIsAIB8QXzkO6J3L_m2w&sourceid=chrome&ie=UTF-8#sv=CAMSZxowKg5uTnF6T1VLNU45dGJnTTIObk5xek9VSzVOOXRiZ006Dk1QVG12cjZMblJUMDFNIAQqLwobX0I2d09hcXVRSE5iZTJyb1BocTJsd0FFXzQ0Eg5uTnF6T1VLNU45dGJnTRgAMAEYByDXspXBCEoIEAEYASABKAE" />
               </div>
             </div>
           </div>
