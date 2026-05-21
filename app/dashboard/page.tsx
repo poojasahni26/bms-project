@@ -32,7 +32,7 @@ export default function Dashboard() {
         </div>
 
         <nav className="flex-1 space-y-1 text-lg px-4">
-          <Link href="/dashboard" className="text-white  hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+          <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
@@ -58,17 +58,18 @@ export default function Dashboard() {
           </Link>
         </nav>
 
-         <div className="px-6 mb-10 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 relative">
+        {/* User Profile Footer (Fixed text-white to text-slate-800) */}
+        <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
+          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
             <img
               alt="Operations Manager"
               className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz3welp1P-T7tg1mJzAFynbnlVZ8e5H4GQrAr6L54LsLghsdytfyEXCVRz6A0zZvyDRxfSDFenpHBRyJ5msC3QJtRpXLMKCBe-KTyWna1AukHJUlz2uGouseZZou67wdTZc9Vjux24wzSg0SRRjxmm6aR9SzI8AS2Jtb-CGY6lv6ej3O7FHquqDG5uUqrckmYyByfBU_DkVyrC1oFxQlsGfkCRhzWb3-uSHG4L_fvRXQUhk_r3nQBdHpvgtKa-NiKbKsc6IFomf8I"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
             />
           </div>
-          <div className="flex flex-col">
-            <span className="text-white font-medium text-sm">Operations Manager</span>
-            <span className="text-slate-400 text-xs">Admin User</span>
+          <div className="flex flex-col min-w-0">
+            <span className="text-slate-800 font-semibold text-sm truncate">Operations Manager</span>
+            <span className="text-slate-500 text-xs">Admin User</span>
           </div>
         </div>
       </aside>
@@ -104,8 +105,8 @@ export default function Dashboard() {
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
               <div className="w-8 h-8 rounded-full bg-[#064e3b] flex items-center justify-center text-white text-xs font-bold">
-              GT
-            </div>
+                GT
+              </div>
             </div>
           </div>
         </header>
@@ -123,9 +124,10 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="hidden md:flex gap-2">
-              <link href="/dashboard/issue" className="px-4 py-2 bg-[#064e3b] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md">
+              {/* FIXED: Changed lowercase <link> to capitalized <Link> */}
+              <Link href="/dashboard/issue" className="px-4 py-2 bg-[#064e3b] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md">
                 Issue Invoice
-              </link>
+              </Link>
             </div>
           </div>
 
@@ -259,7 +261,7 @@ export default function Dashboard() {
                   <tr className="border-b border-[#c9c4d8]">
                     <th className="py-4 text-xs font-semibold text-[#484555] uppercase">Client</th>
                     <th className="py-4 text-xs font-semibold text-[#484555] uppercase">Invoice ID</th>
-                    <th className   ="py-4 text-xs font-semibold text-[#484555] uppercase">Status</th>
+                    <th className="py-4 text-xs font-semibold text-[#484555] uppercase">Status</th>
                     <th className="py-4 text-xs font-semibold text-[#484555] uppercase text-right">Amount</th>
                   </tr>
                 </thead>
