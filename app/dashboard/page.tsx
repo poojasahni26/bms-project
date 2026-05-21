@@ -31,7 +31,7 @@ export default function Dashboard() {
           <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
         </div>
 
-        <nav className="flex-1 space-y-1 text-2xl">
+        <nav className="flex-1 space-y-1 text-l">
           <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
@@ -61,7 +61,7 @@ export default function Dashboard() {
         <div className="p-6 border-t border-[#c9c4d8]">
           <div className="flex items-center gap-3 p-2">
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-100 bg-slate-200">
-              <img alt="User profile" className="w-full h-full object-cover" src="https://www.google.com/search?sca_esv=e4967f2aa746cbdf&sxsrf=ANbL-n6-Sq31LNgHDRuz-lntKP_x0UnPvQ:1779347053003&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3ppPEReeCOS7s1VbbZz2TLt2sOibMbYx2XAHg-v8xM5VMjbOMePxx0DsGneV4EHbo23HMfPcf4hPbnvEH8cgcBShifWMW1NXsjI7K3vNe7eUyEnfYDYdppHZoHBlWtiJPlLmvYuel8UQZlfMnjP1DhbVBGMI6cdN1AmLTQAXbdNCbZ9KHw&q=green+telecom+tanzania+logo&sa=X&ved=2ahUKEwjT4Jqo6MmUAxUGqVYBHTNlFlgQtKgLegQIFhAB&biw=1280&bih=585&dpr=1.5#sv=CAMSVhoyKhBlLXlkOEJQRUNvNkJ4aFZNMg55ZDhCUEVDbzZCeGhWTToOOWVzcG9ZOGctS3Fxd00gBCocCgZtb3NhaWMSEGUteWQ4QlBFQ282QnhoVk0YADABGAcgiebChgtKCBABGAEgASgB" />
+              <img alt="User profile" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE6sgPPA-doukGexFwSQP5EuKCqMA1uftv0kSgpYvS828__BjOgSO6WVo9DDMoVZxzh9kpT5mIKYbdBfgQShropS3hAP-_krXbOsw28p3qTxRYKhT1bsMjD391ANXLJTKlXluhR0X5JD7HckfSdnLFKFkcDkekbBkBkkx1qHzTHiTVK4qVQhvJoidH4OzAHZaELxkQtB-jvw0lWrJKnvtele9MIgwjiuwlWswqlvFk9__puP3afGAMURCzNEiRJTORzhxDo6HBM9E" />
             </div>
             <div className="overflow-hidden">
               <p className="text-sm font-semibold text-[#181c21] truncate">Alex Executive</p>
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#064e3b] flex items-center justify-center text-white font-bold text-sm shadow-sm overflow-hidden cursor-pointer">
-                <img alt="User profile" className="w-7 h-3 object-cover" src="https://www.google.com/search?q=green+telecom+logo&oq=green+telecom+logo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQABiGAxiABBiKBTIKCAIQABiABBiiBDIKCAMQABiABBiiBDIHCAQQABjvBTIHCAUQABjvBTIHCAYQABjvBdIBCDc0NTJqMGo3qAIIsAIB8QXzkO6J3L_m2w&sourceid=chrome&ie=UTF-8#sv=CAMSZxowKg5uTnF6T1VLNU45dGJnTTIObk5xek9VSzVOOXRiZ006Dk1QVG12cjZMblJUMDFNIAQqLwobX0I2d09hcXVRSE5iZTJyb1BocTJsd0FFXzQ0Eg5uTnF6T1VLNU45dGJnTRgAMAEYByDXspXBCEoIEAEYASABKAE" />
+                <img alt="User profile" className="w-full h-full object-cover" src="https://www.google.com/search?sca_esv=e4967f2aa746cbdf&sxsrf=ANbL-n6-Sq31LNgHDRuz-lntKP_x0UnPvQ:1779347053003&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3ppPEReeCOS7s1VbbZz2TLt2sOibMbYx2XAHg-v8xM5VMjbOMePxx0DsGneV4EHbo23HMfPcf4hPbnvEH8cgcBShifWMW1NXsjI7K3vNe7eUyEnfYDYdppHZoHBlWtiJPlLmvYuel8UQZlfMnjP1DhbVBGMI6cdN1AmLTQAXbdNCbZ9KHw&q=green+telecom+tanzania+logo&sa=X&ved=2ahUKEwjT4Jqo6MmUAxUGqVYBHTNlFlgQtKgLegQIFhAB&biw=1280&bih=585&dpr=1.5#sv=CAMSVhoyKhBlLXlkOEJQRUNvNkJ4aFZNMg55ZDhCUEVDbzZCeGhWTToOOWVzcG9ZOGctS3Fxd00gBCocCgZtb3NhaWMSEGUteWQ4QlBFQ282QnhoVk0YADABGAcgiebChgtKCBABGAEgASgB" />
               </div>
             </div>
           </div>
@@ -121,9 +121,9 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="hidden md:flex gap-2">
-              <button className="px-4 py-2 bg-[#064e3b] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md">
+              <link href="/dashboard/issue" className="px-4 py-2 bg-[#064e3b] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md">
                 Issue Invoice
-              </button>
+              </link>
             </div>
           </div>
 
