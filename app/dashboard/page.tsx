@@ -1,203 +1,332 @@
-import React from 'react';
-import Link from 'next/link';
+'use client';
 
-export default function DashboardPage() {
+import React, { useState } from 'react';
+
+export default function Dashboard() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
   return (
-    <>
-      {/* Load External Fonts and Icons */}
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <div className="bg-[#f8f9ff] text-[#181c21] min-h-screen pb-32 lg:flex font-sans">
+      {/* Material Symbols and Google Font Imports */}
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-      <div className="text-[#191c1d] bg-[#f8f9fa] font-['Inter'] min-h-screen">
-        
-        {/* Navigation Drawer */}
-        <aside className="h-full w-64 fixed left-0 top-0 z-50 bg-blue-500 border-r border-blue-500 shadow-2xl flex flex-col py-6">
-          <div className="px-6 mb-8">
-            <span className="text-white text-xl font-black">BMS Institutional</span>
+      {/* Sidebar Overlay for Mobile */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-[60] lg:hidden" 
+          onClick={toggleSidebar}
+        />
+      )}
+
+      {/* Navigation Drawer */}
+      <aside className={`fixed lg:sticky top-0 left-0 h-screen w-[280px] bg-white border-r border-[#c9c4d8] z-[70] transition-transform duration-300 overflow-y-auto flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
+        <div className="p-6 flex items-center gap-3">
+          <div className="w-10 h-10 bg-[#064e3b] rounded-xl flex items-center justify-center shadow-lg">
+            <span className="material-symbols-outlined text-white">bolt</span>
           </div>
-          
-          <div className="px-6 mb-10 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500">
-              <img 
-                alt="Operations Manager" 
-                className="w-full h-full object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz3welp1P-T7tg1mJzAFynbnlVZ8e5H4GQrAr6L54LsLghsdytfyEXCVRz6A0zZvyDRxfSDFenpHBRyJ5msC3QJtRpXLMKCBe-KTyWna1AukHJUlz2uGouseZZou67wdTZc9Vjux24wzSg0SRRjxmm6aR9SzI8AS2Jtb-CGY6lv6ej3O7FHquqDG5uUqrckmYyByfBU_DkVyrC1oFxQlsGfkCRhzWb3-uSHG4L_fvRXQUhk_r3nQBdHpvgtKa-NiKbKsc6IFomf8I" 
+          <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
+        </div>
+
+        <nav className="flex-grow px-4 space-y-1 mt-4">
+          <a className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#064e3b]/10 text-[#064e3b] font-semibold transition-all" href="#">
+            <span className="material-symbols-outlined">dashboard</span>
+            <span className="text-base">Dashboard</span>
+          </a>
+          {[
+            { icon: 'group', label: 'Clients' },
+            { icon: 'description', label: 'Invoices' },
+            { icon: 'assessment', label: 'Reports' },
+            { icon: 'payments', label: 'Payments' },
+            { icon: 'settings', label: 'Settings' }
+          ].map((item) => (
+            <a key={item.label} className="flex items-center gap-3 px-4 py-3 rounded-xl text-[#484555] hover:bg-[#f0f4fb] transition-all" href="#">
+              <span className="material-symbols-outlined">{item.icon}</span>
+              <span className="text-base">{item.label}</span>
+            </a>
+          ))}
+        </nav>
+
+        <div className="p-6 border-t border-[#c9c4d8]">
+          <div className="flex items-center gap-3 p-2">
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-100 bg-slate-200">
+              <img alt="User profile" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE6sgPPA-doukGexFwSQP5EuKCqMA1uftv0kSgpYvS828__BjOgSO6WVo9DDMoVZxzh9kpT5mIKYbdBfgQShropS3hAP-_krXbOsw28p3qTxRYKhT1bsMjD391ANXLJTKlXluhR0X5JD7HckfSdnLFKFkcDkekbBkBkkx1qHzTHiTVK4qVQhvJoidH4OzAHZaELxkQtB-jvw0lWrJKnvtele9MIgwjiuwlWswqlvFk9__puP3afGAMURCzNEiRJTORzhxDo6HBM9E" />
+            </div>
+            <div className="overflow-hidden">
+              <p className="text-sm font-semibold text-[#181c21] truncate">Alex Executive</p>
+              <p className="text-xs uppercase tracking-wider font-semibold text-[#484555] truncate">Admin Account</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content Area */}
+      <div className="flex-grow flex flex-col min-w-0">
+        {/* Top App Bar */}
+        <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <button className="lg:hidden p-2 hover:bg-[#f0f4fb] rounded-full transition-colors" onClick={toggleSidebar}>
+              <span className="material-symbols-outlined text-[#484555]">menu</span>
+            </button>
+            <h1 className="hidden md:block text-xl text-[#181c21] font-bold">Billing Management</h1>
+            <h1 className="md:hidden text-xl text-[#181c21] font-bold">BMS</h1>
+          </div>
+
+          {/* Search Bar */}
+          <div className="flex-grow max-w-xl px-4">
+            <div className="relative group">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#484555] opacity-60 group-focus-within:text-[#064e3b] transition-colors">search</span>
+              <input 
+                className="w-full bg-[#f0f4fb] border-none rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-[#064e3b]/20 transition-all placeholder:text-[#484555] placeholder:opacity-50" 
+                placeholder="Search invoices, clients, or reports..." 
+                type="text" 
               />
             </div>
-            <div className="flex flex-col">
-              <span className="text-white font-medium text-sm">Operations Manager</span>
-              <span className="text-white text-xs">Admin User</span>
+          </div>
+
+          <div className="flex items-center gap-2 md:gap-4">
+            <button className="p-2 hover:bg-[#f0f4fb] rounded-full transition-colors relative">
+              <span className="material-symbols-outlined text-[#484555]">notifications</span>
+              <span className="absolute top-2 right-2 w-2 h-2 bg-[#ba1a1a] rounded-full border-2 border-white"></span>
+            </button>
+            <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#064e3b] flex items-center justify-center text-white font-bold text-sm shadow-sm overflow-hidden cursor-pointer">
+                <img alt="User profile" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBef2qf1EeJmsUwrgGRSCKwhMNc3hEWLXnFHhwrFc9Yg8m9Noxh9WQ75DGXLRzKZeCBiBDNxk0hV11IBvtH-NRAJpCNUsIyzOr-eChu_vLLLnNAPzMTgHWYBveVkQQiq0f0_AR_N3qKsVGYtleKSeSsBMCxljyu2XIzm4aFI803P0g2y-_Hcag935uoXOP9aOrkO2TEv15QbMhqWFH3YZrOZs32U6HZoqOOlBKhvpGgBpWi3oj7DeW-SSPtAHfGaaUCZqz1bHWg1v0" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main className="max-w-7xl mx-auto px-4 md:px-8 pt-8 flex-grow w-full">
+          {/* Dashboard Header */}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="bg-[#064e3b] p-3 rounded-xl shadow-lg">
+                <span className="material-symbols-outlined text-white">dashboard</span>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-[#181c21]">Dashboard</h2>
+                <p className="text-xs uppercase tracking-wider text-[#484555] font-semibold">Overview &amp; Analytics</p>
+              </div>
+            </div>
+            <div className="hidden md:flex gap-2">
+              <button className="px-4 py-2 bg-[#064e3b] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md">
+                Issue Invoice
+              </button>
             </div>
           </div>
 
-          <nav className="flex-1 space-y-1">
-            <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
-              <span className="material-symbols-outlined">dashboard</span>
-              <span className="text-sm font-medium">Dashboard</span>
-            </Link>
-            <Link href="/dashboard/invoices" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
-              <span className="material-symbols-outlined">receipt_long</span>
-              <span className="text-sm font-medium">Invoices</span>
-            </Link>
-            <Link href="/dashboard/payments" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
-              <span className="material-symbols-outlined">payments</span>
-              <span className="text-sm font-medium">Payments</span>
-            </Link>
-            <Link href="/dashboard/clients" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
-              <span className="material-symbols-outlined">group</span>
-              <span className="text-sm font-medium">Clients</span>
-            </Link>
-            <Link href="/dashboard/reports" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
-              <span className="material-symbols-outlined">analytics</span>
-              <span className="font-inter text-sm font-medium">Reports</span>
-            </Link>
-            <Link href="/dashboard/settings" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all duration-200">
-              <span className="material-symbols-outlined">settings</span>
-              <span className="font-inter text-sm font-medium">Settings</span>
-            </Link>
-          </nav>
-        </aside>
-
-        {/* Main Content */}
-        <main className="ml-64 min-h-screen">
-          
-          {/* Top Bar */}
-          <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center px-6 py-3 sticky top-0 z-40">
-            <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-[#001f3f] cursor-pointer">menu</span>
-              <h1 className="text-lg font-bold text-[#001f3f]">Billing Management</h1>
-            </div>
-            
-            <div className="flex-1 max-w-xl px-12">
-              <div className="relative">
-                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-                <input 
-                  className="w-full bg-slate-100 border-none rounded-lg py-2 pl-10 pr-4 focus:ring-2 focus:ring-slate-300 text-sm" 
-                  placeholder="Search invoices, clients, or reports..." 
-                  type="text" 
-                />
+          {/* Metric Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {/* Total Revenue */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-orange-500 to-orange-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-base font-semibold opacity-90">Total Revenue</p>
+                <span className="material-symbols-outlined opacity-80">trending_up</span>
               </div>
+              <h3 className="text-3xl font-bold mb-4">$428,500.00</h3>
+              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Increased by 12%</p>
             </div>
 
-            <div className="flex items-center gap-4">
-              <span className="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full cursor-pointer transition-colors">notifications</span>
-              <div className="w-8 h-8 rounded-full bg-[#001f3f] flex items-center justify-center text-white text-xs font-bold">JD</div>
-            </div>
-          </header>
-
-          {/* Dashboard Canvas */}
-          <div className="p-8 space-y-6">
-            
-            <div className="flex justify-between items-end">
-              <div>
-                <h2 className="text-3xl font-bold text-[#000613]">Executive Overview</h2>
-                <p className="text-slate-500 text-sm">Financial performance tracking for Q3 Fiscal Year</p>
+            {/* Pending Bills */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-base font-semibold opacity-90">Pending Bills</p>
+                <span class="material-symbols-outlined opacity-80">receipt_long</span>
               </div>
-              <Link href="/dashboard/issue" 
-               className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
-                  >
-                Issue Invoice
-               </Link>
+              <h3 className="text-3xl font-bold mb-4">42</h3>
+              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">8 priority invoices</p>
             </div>
 
-            {/* Summary Cards */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { label: 'Total Revenue', value: '$428,500.00', trend: '+12.5%', color: 'text-emerald-600', icon: 'payments' },
-                { label: 'Pending Bills', value: '42', trend: '-4%', color: 'text-red-600', icon: 'schedule' },
-                { label: 'New Customers', value: '128', trend: '+18%', color: 'text-emerald-600', icon: 'person_add' },
-                { label: 'Overdue Payments', value: '$14,230.50', trend: 'Critical', color: 'text-red-600', icon: 'priority_high' },
-              ].map((card, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{card.label}</span>
-                    <div className="p-2 bg-slate-100 rounded-lg">
-                      <span className="material-symbols-outlined text-slate-600 text-sm">{card.icon}</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold tabular-nums">{card.value}</div>
-                    <div className={`text-xs font-bold mt-2 ${card.color}`}>{card.trend} <span className="text-slate-400 font-normal">vs last month</span></div>
-                  </div>
-                </div>
-              ))}
-            </section>
+            {/* New Customers */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-base font-semibold opacity-90">New Customers</p>
+                <span className="material-symbols-outlined opacity-80">group_add</span>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">128</h3>
+              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Increased by 5%</p>
+            </div>
 
-            {/* Revenue Chart Section */}
-            <section className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+            {/* Overdue Payments */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-emerald-800 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-4">
+                <p className="text-base font-semibold opacity-90">Overdue Payments</p>
+                <span className="material-symbols-outlined opacity-80">warning</span>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">$14,230.50</h3>
+              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Attention required</p>
+            </div>
+          </div>
+
+          {/* Middle Analytics Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+            {/* Chart Area */}
+            <div className="lg:col-span-2 bg-white p-8 rounded-3xl shadow-sm border border-[#c9c4d8]/20">
               <div className="flex justify-between items-center mb-8">
-                <h3 className="text-xl font-semibold">Revenue vs. Expenses</h3>
+                <h3 className="text-lg font-bold text-[#181c21]">Revenue vs. Expenses</h3>
                 <div className="flex gap-4">
-                  <div className="flex items-center gap-2 text-sm"><span className="w-3 h-3 rounded-full bg-slate-900"></span> Revenue</div>
-                  <div className="flex items-center gap-2 text-sm"><span className="w-3 h-3 rounded-full bg-emerald-400"></span> Expenses</div>
-                </div>
-              </div>
-              <div className="h-64 w-full bg-slate-50 rounded-lg flex items-end justify-between px-10 pb-4 relative overflow-hidden">
-                 {/* Visual Bar Chart Mockup */}
-                 {[30, 50, 45, 80, 60, 75].map((h, i) => (
-                   <div key={i} className="flex flex-col items-center gap-2 z-10">
-                     <div className="w-12 bg-slate-900/20 rounded-t-md transition-all hover:bg-slate-900" style={{ height: `${h * 2}px` }}></div>
-                     <span className="text-[10px] text-slate-400 uppercase font-bold">Month {i+1}</span>
-                   </div>
-                 ))}
-                 <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAukTkzV4vbT8pcsysLxjmC7xQgipqYkT-68eVzoHWUez904O7HLZQ8R5XhCh1m_LHME5XZjF6CJb8sL7dbktuuZY_nNbc3xqx6BBNFlsQeeVcrlR_9itWdSjs0LnVaCuNd4E-HFNmB1WIYHqcfFk5rj1dUOyJ-G7izSNi3T7gnVHWckBCsnuclHbaqI-_3VP4jtGDJq4-0dvYYamMr_wbQmUNf1m2JSpSLpAyR6vpzrnrOoszY-AuQalvHerSHAFOcgQu8dQai1UI" alt="chart bg" />
-                 </div>
-              </div>
-            </section>
-
-            {/* Bottom Grid */}
-            <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Transactions Table */}
-              <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="text-lg font-bold mb-6">Recent Transactions</h3>
-                <table className="w-full text-left text-sm">
-                  <thead className="border-b border-slate-100">
-                    <tr className="text-slate-400 uppercase text-[10px] font-bold">
-                      <th className="py-4">Client</th>
-                      <th className="py-4">Invoice</th>
-                      <th className="py-4">Amount</th>
-                      <th className="py-4">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-50">
-                    <tr className="hover:bg-slate-50 transition-colors">
-                      <td className="py-4 font-medium">TechCorp Inc.</td>
-                      <td className="py-4 text-slate-500">#INV-8821</td>
-                      <td className="py-4 font-bold">$12,450.00</td>
-                      <td className="py-4"><span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-[10px] font-bold">PAID</span></td>
-                    </tr>
-                    <tr className="hover:bg-slate-50 transition-colors">
-                      <td className="py-4 font-medium">Global Logistics</td>
-                      <td className="py-4 text-slate-500">#INV-8820</td>
-                      <td className="py-4 font-bold">$8,200.00</td>
-                      <td className="py-4"><span className="px-2 py-1 bg-slate-100 text-slate-500 rounded text-[10px] font-bold">PENDING</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              {/* System Events */}
-              <div className="bg-blue-500 p-8 rounded-xl shadow-xl text-white">
-                <h3 className="text-lg font-bold mb-6">System Events</h3>
-                <div className="space-y-6 relative border-l border-slate-700 ml-2 pl-6">
-                  <div className="relative">
-                    <div className="absolute -left-[31px] top-1 w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
-                    <p className="text-sm font-medium">Invoice #INV-8821 Paid</p>
-                    <p className="text-[10px] text-white">2 minutes ago</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+                    <span className="text-xs font-semibold text-[#484555]">Revenue</span>
                   </div>
-                  <div className="relative">
-                    <div className="absolute -left-[31px] top-1 w-2 h-2 rounded-full bg-blue-500"></div>
-                    <p className="text-sm font-medium">New Client Added</p>
-                    <p className="text-[10px] text-white">45 minutes ago</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-sky-500"></div>
+                    <span className="text-xs font-semibold text-[#484555]">Expenses</span>
                   </div>
                 </div>
               </div>
-            </section>
 
+              {/* Flex Bar Graph Chart */}
+              <div className="h-[300px] w-full flex items-end justify-between gap-2 px-2">
+                {[
+                  { month: 'Jan', rev: '40%', exp: '25%' },
+                  { month: 'Feb', rev: '65%', exp: '35%' },
+                  { month: 'Mar', rev: '45%', exp: '40%' },
+                  { month: 'Apr', rev: '80%', exp: '50%' },
+                  { month: 'May', rev: '60%', exp: '30%' },
+                  { month: 'Jun', rev: '95%', exp: '45%', focus: true },
+                  { month: 'Jul', rev: '55%', exp: '25%' },
+                  { month: 'Aug', rev: '70%', exp: '40%' },
+                ].map((bar, i) => (
+                  <div key={i} className="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+                    <div 
+                      className={`w-full rounded-t-lg transition-all duration-500 hover:opacity-80 ${bar.focus ? 'bg-orange-500 shadow-md' : 'bg-orange-500/30'}`} 
+                      style={{ height: bar.rev }}
+                    />
+                    <div 
+                      className={`w-full rounded-t-lg transition-all duration-500 hover:opacity-80 ${bar.focus ? 'bg-sky-500 shadow-md' : 'bg-sky-500/20'}`} 
+                      style={{ height: bar.exp }}
+                    />
+                    <span className="text-xs font-semibold text-[#484555] mt-2">{bar.month}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Traffic Sources Breakdown */}
+            <div className="bg-white p-8 rounded-3xl shadow-sm flex flex-col border border-[#c9c4d8]/20">
+              <h3 className="text-lg font-bold text-[#181c21] mb-8">Traffic Sources</h3>
+              <div className="relative flex justify-center items-center flex-grow py-6">
+                <div className="w-48 h-48 rounded-full border-[24px] border-orange-500 relative flex items-center justify-center">
+                  <div className="absolute inset-0 w-full h-full rounded-full border-[24px] border-transparent border-t-sky-500 border-r-teal-500 transform rotate-45"></div>
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-[#064e3b]">82%</p>
+                    <p className="text-xs uppercase tracking-wider text-[#484555] font-semibold">Growth</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 mt-4">
+                {[
+                  { color: 'bg-orange-500', source: 'Search Engines', pct: '30%' },
+                  { color: 'bg-sky-500', source: 'Direct Click', pct: '30%' },
+                  { color: 'bg-teal-500', source: 'Bookmarks Click', pct: '40%' }
+                ].map((item) => (
+                  <div key={item.source} className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${item.color}`}></div>
+                      <span className="text-sm text-[#484555]">{item.source}</span>
+                    </div>
+                    <span className="text-sm font-bold">{item.pct}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Recent Transactions Table */}
+          <div className="bg-white p-8 rounded-3xl shadow-sm overflow-hidden border border-[#c9c4d8]/20 mb-8">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold text-[#181c21]">Recent Transactions</h3>
+              <button className="text-[#064e3b] font-bold hover:bg-[#064e3b]/5 px-4 py-2 rounded-full transition-all active:scale-95">View All</button>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-[#c9c4d8]">
+                    <th className="py-4 text-xs font-semibold text-[#484555] uppercase">Client</th>
+                    <th className="py-4 text-xs font-semibold text-[#484555] uppercase">Invoice ID</th>
+                    <th className   ="py-4 text-xs font-semibold text-[#484555] uppercase">Status</th>
+                    <th className="py-4 text-xs font-semibold text-[#484555] uppercase text-right">Amount</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#c9c4d8]/30">
+                  <tr className="hover:bg-[#f0f4fb]/50 transition-colors cursor-pointer group">
+                    <td className="py-5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 font-bold">T</div>
+                        <div>
+                          <p className="text-base text-[#181c21] font-semibold">TechCorp Inc.</p>
+                          <p className="text-xs font-semibold text-[#484555]">Software Subscriptions</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-5 text-sm text-[#484555] font-mono">INV-88219</td>
+                    <td className="py-5">
+                      <span className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-bold">Completed</span>
+                    </td>
+                    <td className="py-5 text-right font-bold text-[#181c21]">$12,450.00</td>
+                  </tr>
+                  <tr className="hover:bg-[#f0f4fb]/50 transition-colors cursor-pointer group">
+                    <td className="py-5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold">G</div>
+                        <div>
+                          <p className="text-base text-[#181c21] font-semibold">Global Logistics</p>
+                          <p className="text-xs font-semibold text-[#484555]">Shipping Services</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-5 text-sm text-[#484555] font-mono">INV-88342</td>
+                    <td className="py-5">
+                      <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Processing</span>
+                    </td>
+                    <td className="py-5 text-right font-bold text-[#181c21]">$8,120.00</td>
+                  </tr>
+                  <tr className="hover:bg-[#f0f4fb]/50 transition-colors cursor-pointer group">
+                    <td className="py-5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-red-600 font-bold">S</div>
+                        <div>
+                          <p className="text-base text-[#181c21] font-semibold">SkyNet Solutions</p>
+                          <p className="text-xs font-semibold text-[#484555]">Cloud Infrastructure</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-5 text-sm text-[#484555] font-mono">INV-88501</td>
+                    <td className="py-5">
+                      <span className="bg-red-200 text-red-800 px-3 py-1 rounded-full text-xs font-bold">Overdue</span>
+                    </td>
+                    <td className="py-5 text-right font-bold text-red-600">$4,230.50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </main>
       </div>
-    </>
+
+      {/* Bottom Nav Bar for Mobile UI */}
+      <nav className="fixed bottom-0 w-full z-50 bg-white shadow-lg rounded-t-xl flex justify-around items-center px-4 pb-6 pt-3 lg:hidden border-t border-[#c9c4d8]/30">
+        {[
+          { icon: 'dashboard', label: 'Dashboard', active: true },
+          { icon: 'receipt_long', label: 'Invoices' },
+          { icon: 'group', label: 'Clients' },
+          { icon: 'settings', label: 'Settings' }
+        ].map((item) => (
+          <div key={item.label} className={`flex flex-col items-center justify-center rounded-full px-6 py-2 transition-transform duration-150 cursor-pointer active:scale-90 ${item.active ? 'text-[#064e3b]' : 'text-[#484555] opacity-70'}`}>
+            <span className="material-symbols-outlined">{item.icon}</span>
+            <span className="text-xs font-semibold">{item.label}</span>
+          </div>
+        ))}
+      </nav>
+
+      {/* Contextual Floating Action Button */}
+      <button className="fixed bottom-24 right-8 w-14 h-14 bg-[#064e3b] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all duration-200 z-40">
+        <span className="material-symbols-outlined">add</span>
+      </button>
+    </div>
   );
 }
