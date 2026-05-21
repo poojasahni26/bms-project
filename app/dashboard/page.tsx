@@ -42,7 +42,7 @@ export default function Dashboard() {
             { icon: 'payments', label: 'Payments' },
             { icon: 'settings', label: 'Settings' }
           ].map((item) => (
-            <a key={item.label} className="flex items-center gap-3 px-4 py-3 rounded-xl text-[#484555] hover:bg-[#f0f4fb] transition-all" href="#">
+            <a key={item.label} className="flex items-center gap-3 px-4 py-3 rounded-xl text-[#064e3b] hover:bg-[#f0f4fb] transition-all" href="#">
               <span className="material-symbols-outlined">{item.icon}</span>
               <span className="text-base">{item.label}</span>
             </a>
@@ -68,10 +68,10 @@ export default function Dashboard() {
         <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button className="lg:hidden p-2 hover:bg-[#f0f4fb] rounded-full transition-colors" onClick={toggleSidebar}>
-              <span className="material-symbols-outlined text-[#484555]">menu</span>
+              <span className="material-symbols-outlined text-[#064e3b]">menu</span>
             </button>
-            <h1 className="hidden md:block text-xl text-[#181c21] font-bold">Billing Management</h1>
-            <h1 className="md:hidden text-xl text-[#181c21] font-bold">BMS</h1>
+            <h1 className="hidden md:block text-xl text-[#064e3b] font-bold">Billing Management</h1>
+            <h1 className="md:hidden text-xl text-[#064e3b] font-bold">BMS</h1>
           </div>
 
           {/* Search Bar */}
@@ -88,7 +88,7 @@ export default function Dashboard() {
 
           <div className="flex items-center gap-2 md:gap-4">
             <button className="p-2 hover:bg-[#f0f4fb] rounded-full transition-colors relative">
-              <span className="material-symbols-outlined text-[#484555]">notifications</span>
+              <span className="material-symbols-outlined text-[#064e3b]">notifications</span>
               <span className="absolute top-2 right-2 w-2 h-2 bg-[#ba1a1a] rounded-full border-2 border-white"></span>
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
@@ -134,7 +134,7 @@ export default function Dashboard() {
             <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
               <div className="flex justify-between items-start mb-4">
                 <p className="text-base font-semibold opacity-90">Pending Bills</p>
-                <span class="material-symbols-outlined opacity-80">receipt_long</span>
+                <span className="material-symbols-outlined opacity-80">receipt_long</span>
               </div>
               <h3 className="text-3xl font-bold mb-4">42</h3>
               <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">8 priority invoices</p>
