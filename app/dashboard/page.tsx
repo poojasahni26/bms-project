@@ -9,7 +9,7 @@ export default function Dashboard() {
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
-    <div className="bg-[#f8f9ff] text-[#181c21] min-h-screen pb-32 lg:flex font-sans">
+    <div className="bg-[#f8f9ff] text-[#064e3b] min-h-screen pb-32 lg:flex font-sans">
       {/* Material Symbols and Google Font Imports */}
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -32,27 +32,27 @@ export default function Dashboard() {
         </div>
 
         <nav className="flex-1 space-y-1">
-          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">receipt_long</span>
             <span className="text-sm font-medium">Invoices</span>
           </Link>
-          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">payments</span>
             <span className="text-sm font-medium">Payments</span>
           </Link>
-          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 bg-slate-800 transition-all">
+          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">group</span>
             <span className="text-sm font-medium">Clients</span>
           </Link>
-          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">analytics</span>
             <span className="text-sm font-medium">Reports</span>
           </Link>
-          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all duration-200">
+          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200">
             <span className="material-symbols-outlined">settings</span>
             <span className="text-sm font-medium">Settings</span>
           </Link>
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </button>
             <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#064e3b] flex items-center justify-center text-white font-bold text-sm shadow-sm overflow-hidden cursor-pointer">
-                <img alt="User profile" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBef2qf1EeJmsUwrgGRSCKwhMNc3hEWLXnFHhwrFc9Yg8m9Noxh9WQ75DGXLRzKZeCBiBDNxk0hV11IBvtH-NRAJpCNUsIyzOr-eChu_vLLLnNAPzMTgHWYBveVkQQiq0f0_AR_N3qKsVGYtleKSeSsBMCxljyu2XIzm4aFI803P0g2y-_Hcag935uoXOP9aOrkO2TEv15QbMhqWFH3YZrOZs32U6HZoqOOlBKhvpGgBpWi3oj7DeW-SSPtAHfGaaUCZqz1bHWg1v0" />
+                <img alt="User profile" className="w-full h-full object-cover" src="https://www.google.com/search?q=green+telecom+logo&oq=green+telecom+logo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQABiGAxiABBiKBTIKCAIQABiABBiiBDIKCAMQABiABBiiBDIHCAQQABjvBTIHCAUQABjvBTIHCAYQABjvBdIBCDc0NTJqMGo3qAIIsAIB8QXzkO6J3L_m2w&sourceid=chrome&ie=UTF-8#sv=CAMSZxowKg5uTnF6T1VLNU45dGJnTTIObk5xek9VSzVOOXRiZ006Dk1QVG12cjZMblJUMDFNIAQqLwobX0I2d09hcXVRSE5iZTJyb1BocTJsd0FFXzQ0Eg5uTnF6T1VLNU45dGJnTRgAMAEYByDXspXBCEoIEAEYASABKAE" />
               </div>
             </div>
           </div>
@@ -116,8 +116,8 @@ export default function Dashboard() {
                 <span className="material-symbols-outlined text-white">dashboard</span>
               </div>
               <div>
-                <h2 className="text-xl font-bold text-[#181c21]">Dashboard</h2>
-                <p className="text-xs uppercase tracking-wider text-[#484555] font-semibold">Overview &amp; Analytics</p>
+                <h2 className="text-xl font-bold text-[#064e3b]">Dashboard</h2>
+                <p className="text-xs uppercase tracking-wider text-[#064e3b] font-semibold">Overview & Analytics</p>
               </div>
             </div>
             <div className="hidden md:flex gap-2">
