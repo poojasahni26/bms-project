@@ -116,60 +116,64 @@ export default function InvoiceDashboard() {
           
           {/* Summary KPI Header Control Panel */}
           <section>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-              <h2 className="text-2xl font-bold text-[#000613]">Overview</h2>
-              <div>
-              <button className="bg-[#006d37] text-white px-6 py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity w-full sm:w-auto">
-                <span className="material-symbols-outlined">add</span>
-                Generate Invoice
-              </button>
-              <button className="bg-[#006d37] text-white px-6 py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity w-full sm:w-auto">
-                <span className="material-symbols-outlined">add</span>
-                Recurring Invoice
-              </button>
-            </div>
+            <div className="flex items-center justify-between flex-nowrap gap-4 mb-6">
+              {/* Left Side: Heading */}
+              <h2 className="text-2xl font-bold text-[#000613] whitespace-nowrap">Overview</h2>
+        
+              {/* Right Side: Action Buttons in One Line */}
+              <div className="flex items-center gap-3 flex-nowrap">
+                <button className="bg-[#006d37] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity whitespace-nowrap">
+                  <span className="material-symbols-outlined text-sm sm:text-base">add</span>
+                  Generate Invoice
+                </button>
+                <button className="bg-[#006d37] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity whitespace-nowrap">
+                  <span className="material-symbols-outlined text-sm sm:text-base">autorenew</span>
+                  Recurring Invoice
+                </button>
+              </div>
             </div>
 
             {/* Metrics Layout Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              
               {/* Total Balance Amount Data Field */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-                <div className="flex justify-between items-start mb-4">
-                  <p className="text-base font-semibold opacity-90">Total Revenue</p>
-                  <span className="material-symbols-outlined p-2  rounded-lg text-[#d4e3ff]">account_balance_wallet</span>
+              <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Total Revenue</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl rounded-lg text-[#d4e3ff]">account_balance_wallet</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">TZS 45.2M</h3>
-                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Across 128 clients</p>
+                <h3 className="text-xl font-bold mb-3">TZS 45.2M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Across 128 clients</p>
               </div>
 
               {/* Verified Paid Metrics Block */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-                <div className="flex justify-between items-start mb-4">
-                  <p className="text-base font-semibold opacity-90">Paid Invoices</p>
-                  <span className="material-symbols-outlined p-2  rounded-lg text-[#00743a]">check_circle</span>
+              <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Paid Invoices</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl rounded-lg text-white">check_circle</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">TZS 32.8M</h3>
-                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">82% collection rate</p>
+                <h3 className="text-xl font-bold mb-3">TZS 32.8M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">82% collection rate</p>
               </div>
 
               {/* Pending Transactions Track Ledger */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-                <div className="flex justify-between items-start mb-4">
-                  <p className="text-base font-semibold opacity-90">Pending</p>
-                  <span className="material-symbols-outlined p-2 text-white rounded-lg">pending</span>
+              <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Pending</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl text-white rounded-lg">pending</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">TZS 8.4M</h3>
-                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">14 invoices awaiting</p>
+                <h3 className="text-xl font-bold mb-3">TZS 8.4M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">14 invoices awaiting</p>
               </div>
 
               {/* Account Overdue Alert Feed Container */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-                <div className="flex justify-between items-start mb-4">
-                  <p className="text-base font-semibold opacity-90">Overdue</p>
-                  <span className="material-symbols-outlined p-2 text-white rounded-lg">warning</span>
+              <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Overdue</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl text-white rounded-lg">warning</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">TZS 4.0M</h3>
-                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Requires immediate action</p>
+                <h3 className="text-xl font-bold mb-3">TZS 4.0M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Requires immediate action</p>
               </div>
             </div>
           </section>
