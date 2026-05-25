@@ -22,7 +22,6 @@ export default function InvoiceDashboard() {
         />
       )}
 
-     
       {/* Navigation Drawer */}
       <aside className={`fixed lg:sticky top-0 left-0 h-screen w-[280px] bg-white border-r border-[#c9c4d8] z-[70] transition-transform duration-300 overflow-y-auto flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
         <div className="p-6 flex items-center gap-3">
@@ -33,11 +32,11 @@ export default function InvoiceDashboard() {
         </div>
 
         <nav className="flex-1 space-y-1 text-lg px-4">
-          <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/invoices" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">receipt_long</span>
             <span className="text-sm font-medium">Invoices</span>
           </Link>
@@ -92,7 +91,7 @@ export default function InvoiceDashboard() {
             <div className="relative group">
               <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#484555] opacity-60 group-focus-within:text-[#064e3b] transition-colors">search</span>
               <input 
-                className="w-full bg-[#f0f4fb] border-none rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-[#064e3b]/20 transition-all placeholder:text-[#484555] placeholder:opacity-50" 
+                className="w-full bg-[#f0f4fb] border-none rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-[#064e3b]/20 transition-all placeholder:text-[#484555] placeholder:opacity-50 outline-none" 
                 placeholder="Search invoices, clients, or reports..." 
                 type="text" 
               />
@@ -112,202 +111,225 @@ export default function InvoiceDashboard() {
           </div>
         </header>
 
-        <main className="flex-1 pb-24 md:pb-6">
-          {/* Mobile Search Feed */}
-          <section className="p-4 md:px-6 md:pt-6 md:pb-2">
-            <div className="md:hidden mb-4">
-              <div className="relative">
-                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#74777f] text-xl">search</span>
-                <input 
-                  className="w-full bg-white border border-[#c4c6cf] rounded-lg pl-11 py-3 text-base shadow-sm outline-none" 
-                  placeholder="Search invoices..." 
-                  type="text" 
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="hidden md:flex flex-col">
-                <div className="flex items-center gap-2 text-[#43474e] mb-1">
-                  <span className="material-symbols-outlined text-base">dashboard_customize</span>
-                  <span className="text-xs font-bold uppercase tracking-widest">Dashboard</span>
-                </div>
-                <p className="text-xs text-[#43474e]">OVERVIEW & ANALYTICS</p>
-              </div>
-              <button className="bg-[#003d29] text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-[#00A76F] transition-colors shadow-sm ml-auto active:scale-95">
-                <span className="material-symbols-outlined text-lg">add_circle</span>
-                Issue Invoice
+        {/* Global Dashboard Feed Container Viewport Offset */}
+        <main className="flex-1 pb-24 lg:pb-8 p-6 lg:p-8 space-y-8">
+          
+          {/* Summary KPI Header Control Panel */}
+          <section>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+              <h2 className="text-2xl font-bold text-[#000613]">Overview</h2>
+              <button className="bg-[#006d37] text-white px-6 py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity w-full sm:w-auto">
+                <span className="material-symbols-outlined">add</span>
+                Create Invoice
               </button>
             </div>
-          </section>
 
-          {/* Metric KPI Blocks Row */}
-          <section className="p-4 md:px-6 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex md:grid md:grid-cols-4 gap-4 w-max md:w-full">
-              {/* Card 1: Total Revenue */}
-              <div className="w-[260px] md:w-full h-[150px] rounded-2xl p-5 bg-[#00A76F] text-white relative overflow-hidden shadow-lg flex flex-col justify-between">
-                <div className="flex justify-between items-start z-10">
-                  <span className="text-xs font-bold opacity-90 uppercase">Total Revenue</span>
-                  <span className="material-symbols-outlined opacity-90">trending_up</span>
+            {/* Metrics Layout Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {/* Total Balance Amount Data Field */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-4">
+                  <p className="text-base font-semibold opacity-90">Total Revenue</p>
+                  <span className="material-symbols-outlined p-2 bg-[#6f88ad]/20 rounded-lg text-[#d4e3ff]">account_balance_wallet</span>
                 </div>
-                <div className="z-10">
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight">$294,950</h2>
-                  <span className="inline-block mt-2 px-3 py-1 bg-white/20 rounded-full text-[10px] font-bold">INVOICED TOTAL</span>
-                </div>
-                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+                <h3 className="text-3xl font-bold mb-4">TZS 45.2M</h3>
+                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Across 128 clients</p>
               </div>
 
-              {/* Card 2: Pending Bills */}
-              <div className="w-[180px] md:w-full h-[150px] rounded-2xl p-5 bg-[#00A3FF] text-white relative overflow-hidden shadow-lg flex flex-col justify-between">
-                <div className="flex justify-between items-start z-10">
-                  <span className="text-xs font-bold opacity-90 uppercase">Pending Bills</span>
-                  <span className="material-symbols-outlined opacity-90">receipt_long</span>
+              {/* Verified Paid Metrics Block */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-4">
+                  <p className="text-base font-semibold opacity-90">Paid Invoices</p>
+                  <span className="material-symbols-outlined p-2 bg-[#00743a]/10 rounded-lg text-[#00743a]">check_circle</span>
                 </div>
-                <div className="z-10">
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight">42</h2>
-                  <span className="inline-block mt-2 px-3 py-1 bg-white/20 rounded-full text-[10px] font-bold">8 PRIORITY INVOICES</span>
-                </div>
-                <div className="absolute -left-4 -top-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                <h3 className="text-3xl font-bold mb-4">TZS 32.8M</h3>
+                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">82% collection rate</p>
               </div>
 
-              {/* Card 3: New Customers */}
-              <div className="w-[180px] md:w-full h-[150px] rounded-2xl p-5 bg-[#05CD99] text-white relative overflow-hidden shadow-lg flex flex-col justify-between">
-                <div className="flex justify-between items-start z-10">
-                  <span className="text-xs font-bold opacity-90 uppercase">New Customers</span>
-                  <span className="material-symbols-outlined opacity-90">person_add</span>
+              {/* Pending Transactions Track Ledger */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-4">
+                  <p className="text-base font-semibold opacity-90">Pending</p>
+                  <span className="material-symbols-outlined p-2 text-white rounded-lg">pending</span>
                 </div>
-                <div className="z-10">
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight">128</h2>
-                  <span className="inline-block mt-2 px-3 py-1 bg-white/20 rounded-full text-[10px] font-bold">INCREASED BY 5%</span>
-                </div>
-                <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-white/20 rounded-full blur-xl"></div>
+                <h3 className="text-3xl font-bold mb-4">TZS 8.4M</h3>
+                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">14 invoices awaiting</p>
               </div>
 
-              {/* Card 4: Overdue Payments */}
-              <div className="w-[180px] md:w-full h-[150px] rounded-2xl p-5 bg-[#3B49DF] text-white relative overflow-hidden shadow-lg flex flex-col justify-between">
-                <div className="flex justify-between items-start z-10">
-                  <span className="text-xs font-bold opacity-90 uppercase">Overdue Payments</span>
-                  <span className="material-symbols-outlined opacity-90">warning</span>
+              {/* Account Overdue Alert Feed Container */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-4">
+                  <p className="text-base font-semibold opacity-90">Overdue</p>
+                  <span className="material-symbols-outlined p-2 text-white rounded-lg">warning</span>
                 </div>
-                <div className="z-10">
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight">$14,230</h2>
-                  <span className="inline-block mt-2 px-3 py-1 bg-white/20 rounded-full text-[10px] font-bold uppercase">Attention required</span>
-                </div>
+                <h3 className="text-3xl font-bold mb-4">TZS 4.0M</h3>
+                <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Requires immediate action</p>
               </div>
             </div>
           </section>
 
-          {/* Invoice Processing Feed Table Section */}
-          <section className="px-4 md:px-6 mt-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-[#191c1d]">Recent Invoices</h3>
-              <button className="text-[#00A76F] font-bold text-xs uppercase tracking-wider">See All</button>
+          {/* Dual FX Currency Summary Breakdown Deck */}
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-xl border border-[#c4c6cf] shadow-sm flex items-center justify-between">
+              <div>
+                <h3 className="text-xs font-semibold tracking-wider text-[#74777f] uppercase mb-2">TZS SUMMARY</h3>
+                <p className="text-2xl font-bold text-[#000613]">TZS 38,400,000</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-[#006d37] font-semibold">↑ 12.5%</p>
+                <p className="text-xs text-[#43474e]">Vs last month</p>
+              </div>
             </div>
-            
-            <div className="flex flex-col bg-white rounded-xl shadow-sm border border-[#c4c6cf]/30">
-              {/* Row 1 */}
-              <div className="flex items-center justify-between p-3 border-b border-[#c4c6cf]/30 hover:bg-[#f3f4f5] transition-colors cursor-pointer">
-                <div className="flex flex-col min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <p className="font-bold text-[#00A76F] text-[10px] uppercase">INV-2026-005</p>
-                    <span className="bg-[#ffdad6] text-[#ba1a1a] px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-tight">Overdue</span>
-                  </div>
-                  <h4 className="font-semibold text-sm text-[#191c1d] truncate">Vertex Solutions</h4>
-                  <div className="flex items-center gap-1 text-[10px] text-[#43474e]">
-                    <span className="material-symbols-outlined text-[12px]">location_on</span>
-                    <span className="truncate">Main Campus</span>
-                  </div>
-                </div>
-                <div className="text-right ml-4">
-                  <p className="font-bold text-sm text-[#191c1d]">$14,230.50</p>
-                  <p className="text-[10px] text-[#ba1a1a] font-medium">Due Yesterday</p>
-                </div>
+            <div className="bg-white p-6 rounded-xl border border-[#c4c6cf] shadow-sm flex items-center justify-between">
+              <div>
+                <h3 className="text-xs font-semibold tracking-wider text-[#74777f] uppercase mb-2">USD SUMMARY</h3>
+                <p className="text-2xl font-bold text-[#000613]">$ 14,820.00</p>
               </div>
-
-              {/* Row 2 */}
-              <div className="flex items-center justify-between p-3 border-b border-[#c4c6cf]/30 hover:bg-[#f3f4f5] transition-colors cursor-pointer">
-                <div className="flex flex-col min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <p className="font-bold text-[#00A76F] text-[10px] uppercase">INV-2026-004</p>
-                    <span className="bg-[#00A3FF]/10 text-[#00A3FF] px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-tight">Pending</span>
-                  </div>
-                  <h4 className="font-semibold text-sm text-[#191c1d] truncate">Cloud Scale Ltd</h4>
-                  <div className="flex items-center gap-1 text-[10px] text-[#43474e]">
-                    <span className="material-symbols-outlined text-[12px]">apartment</span>
-                    <span className="truncate">HQ Office</span>
-                  </div>
-                </div>
-                <div className="text-right ml-4">
-                  <p className="font-bold text-sm text-[#191c1d]">$8,400.00</p>
-                  <p className="text-[10px] text-[#43474e]">In 5 days</p>
-                </div>
+              <div className="text-right">
+                <p className="text-sm text-[#ba1a1a] font-semibold">↓ 2.1%</p>
+                <p className="text-xs text-[#43474e]">Vs last month</p>
               </div>
+            </div>
+          </section>
 
-              {/* Row 3 */}
-              <div className="flex items-center justify-between p-3 border-b border-[#c4c6cf]/30 hover:bg-[#f3f4f5] transition-colors cursor-pointer">
-                <div className="flex flex-col min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <p className="font-bold text-[#00A76F] text-[10px] uppercase">INV-2026-003</p>
-                    <span className="bg-[#00A76F]/10 text-[#00A76F] px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-tight">Paid</span>
-                  </div>
-                  <h4 className="font-semibold text-sm text-[#191c1d] truncate">Green Tech Inc</h4>
-                  <div className="flex items-center gap-1 text-[10px] text-[#43474e]">
-                    <span className="material-symbols-outlined text-[12px]">factory</span>
-                    <span className="truncate">Sub-station 4</span>
-                  </div>
-                </div>
-                <div className="text-right ml-4">
-                  <p className="font-bold text-sm text-[#191c1d]">$$22,150.00</p>
-                  <p className="text-[10px] text-[#00A76F] font-medium">Oct 23, 2026</p>
-                </div>
+          {/* Master Operational Processing Invoices Grid Table Component */}
+          <section className="bg-white rounded-xl shadow-sm border border-[#c4c6cf] overflow-hidden">
+            <div className="px-6 py-4 border-b border-[#c4c6cf] flex items-center justify-between">
+              <h2 className="text-lg font-bold text-[#000613]">All Invoices</h2>
+              <div className="flex gap-2">
+                <button className="p-2 hover:bg-[#e7e8e9] rounded-lg text-[#43474e]">
+                  <span className="material-symbols-outlined">filter_list</span>
+                </button>
+                <button className="p-2 hover:bg-[#e7e8e9] rounded-lg text-[#43474e]">
+                  <span className="material-symbols-outlined">download</span>
+                </button>
               </div>
+            </div>
 
-              {/* Row 4 */}
-              <div className="flex items-center justify-between p-3 border-b border-[#c4c6cf]/30 hover:bg-[#f3f4f5] transition-colors cursor-pointer">
-                <div className="flex flex-col min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <p className="font-bold text-[#00A76F] text-[10px] uppercase">INV-2026-002</p>
-                    <span className="bg-[#00A76F]/10 text-[#00A76F] px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-tight">Paid</span>
-                  </div>
-                  <h4 className="font-semibold text-sm text-[#191c1d] truncate">Global Net Co</h4>
-                  <div className="flex items-center gap-1 text-[10px] text-[#43474e]">
-                    <span className="material-symbols-outlined text-[12px]">router</span>
-                    <span className="truncate">Node 7A</span>
-                  </div>
-                </div>
-                <div className="text-right ml-4">
-                  <p className="font-bold text-sm text-[#191c1d]">$12,000.00</p>
-                  <p className="text-[10px] text-[#00A76F] font-medium">Oct 21, 2026</p>
-                </div>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#f3f4f5]">
+                    <th className="px-6 py-4 text-xs font-semibold tracking-wider uppercase text-[#43474e]">Invoice ID</th>
+                    <th className="px-6 py-4 text-xs font-semibold tracking-wider uppercase text-[#43474e]">Client</th>
+                    <th className="px-6 py-4 text-xs font-semibold tracking-wider uppercase text-[#43474e]">Property</th>
+                    <th className="px-6 py-4 text-xs font-semibold tracking-wider uppercase text-[#43474e]">Date</th>
+                    <th className="px-6 py-4 text-xs font-semibold tracking-wider uppercase text-[#43474e] text-right">Amount</th>
+                    <th className="px-6 py-4 text-xs font-semibold tracking-wider uppercase text-[#43474e]">Status</th>
+                    <th className="px-6 py-4"></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#c4c6cf]">
+                  
+                  {/* Paid Item Node Row */}
+                  <tr className="hover:bg-[#f3f4f5] transition-colors group">
+                    <td className="px-6 py-4 text-sm font-medium text-[#000613]">#INV-9821</td>
+                    <td className="px-6 py-4 text-sm text-[#191c1d]">Habari Node Ltd</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">Telecom Tower A</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">Oct 12, 2023</td>
+                    <td className="px-6 py-4 text-sm text-right font-bold text-[#000613]">TZS 1,200,000</td>
+                    <td className="px-6 py-4">
+                      <span className="px-3 py-1 bg-[#6bfe9c]/20 text-[#00743a] text-xs font-semibold rounded-full border border-[#006d37]/20">Paid</span>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <button className="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
 
-              {/* Row 5 */}
-              <div className="flex items-center justify-between p-3 border-b border-[#c4c6cf]/30 hover:bg-[#f3f4f5] transition-colors cursor-pointer">
-                <div className="flex flex-col min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <p className="font-bold text-[#00A76F] text-[10px] uppercase">INV-2026-001</p>
-                    <span className="bg-[#00A76F]/10 text-[#00A76F] px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-tight">Paid</span>
-                  </div>
-                  <h4 className="font-semibold text-sm text-[#191c1d] truncate">Vertex Solutions</h4>
-                  <div className="flex items-center gap-1 text-[10px] text-[#43474e]">
-                    <span className="material-symbols-outlined text-[12px]">location_on</span>
-                    <span className="truncate">Main Campus</span>
-                  </div>
-                </div>
-                <div className="text-right ml-4">
-                  <p className="font-bold text-sm text-[#191c1d]">$45,000.00</p>
-                  <p className="text-[10px] text-[#00A76F] font-medium">Oct 18, 2026</p>
-                </div>
+                  {/* Pending Processing Row */}
+                  <tr className="hover:bg-[#f3f4f5] transition-colors group">
+                    <td className="px-6 py-4 text-sm font-medium text-[#000613]">#INV-9822</td>
+                    <td className="px-6 py-4 text-sm text-[#191c1d]">Zantel Connect</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">East Coast Station</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">Oct 14, 2023</td>
+                    <td className="px-6 py-4 text-sm text-right font-bold text-[#000613]">TZS 450,000</td>
+                    <td className="px-6 py-4">
+                      <span className="px-3 py-1 bg-[#e7e8e9] text-[#43474e] text-xs font-semibold rounded-full border border-[#c4c6cf]">Pending</span>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <button className="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  {/* Overdue Delinquent Transaction Record */}
+                  <tr className="hover:bg-[#f3f4f5] transition-colors group">
+                    <td className="px-6 py-4 text-sm font-medium text-[#000613]">#INV-9823</td>
+                    <td className="px-6 py-4 text-sm text-[#191c1d]">Vodacom TZ</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">HQ Mainframe</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">Sep 28, 2023</td>
+                    <td className="px-6 py-4 text-sm text-right font-bold text-[#000613]">TZS 2,800,000</td>
+                    <td className="px-6 py-4">
+                      <span className="px-3 py-1 bg-[#ffdad6] text-[#93000a] text-xs font-semibold rounded-full border border-[#ba1a1a]/20">Overdue</span>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <button className="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  {/* Foreign Currency FX Data Row */}
+                  <tr className="hover:bg-[#f3f4f5] transition-colors group">
+                    <td className="px-6 py-4 text-sm font-medium text-[#000613]">#INV-9824</td>
+                    <td className="px-6 py-4 text-sm text-[#191c1d]">Tigo Business</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">Relay Node 4</td>
+                    <td className="px-6 py-4 text-sm text-[#43474e]">Oct 16, 2023</td>
+                    <td className="px-6 py-4 text-sm text-right font-bold text-[#000613]">$ 840.00</td>
+                    <td className="px-6 py-4">
+                      <span className="px-3 py-1 bg-[#6bfe9c]/20 text-[#00743a] text-xs font-semibold rounded-full border border-[#006d37]/20">Paid</span>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <button className="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Pagination Controls Footer Navigation */}
+            <div className="px-6 py-4 border-t border-[#c4c6cf] flex justify-between items-center bg-[#f3f4f5]">
+              <span className="text-sm text-[#43474e]">Showing 4 of 128 invoices</span>
+              <div className="flex gap-2">
+                <button className="p-2 hover:bg-[#e7e8e9] rounded-full disabled:opacity-30" disabled>
+                  <span className="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button className="p-2 hover:bg-[#e7e8e9] rounded-full">
+                  <span className="material-symbols-outlined">chevron_right</span>
+                </button>
               </div>
             </div>
           </section>
         </main>
-
-        {/* Floating Add Action Trigger Button for Smaller Device Viewports */}
-        <button className="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-[#003d29] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
-          <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>add</span>
-        </button>
       </div>
+
+      {/* Global Context Bottom Navigation Dock Layout (Mobile viewports only) */}
+      <nav className="fixed bottom-0 left-0 w-full h-[72px] lg:hidden bg-[#f8f9fa] border-t border-[#c4c6cf] shadow-lg flex justify-around items-center px-4 z-50">
+        <Link href="/dashboard" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
+          <span className="material-symbols-outlined">home</span>
+          <span className="text-[10px] font-semibold uppercase">Home</span>
+        </Link>
+        <Link href="/invoices" className="text-[#006d37] flex flex-col items-center justify-center gap-1">
+          <span className="material-symbols-outlined">receipt</span>
+          <span className="text-[10px] font-semibold uppercase">Invoices</span>
+        </Link>
+        <button className="w-12 h-12 bg-[#001f3f] text-white rounded-full flex items-center justify-center shadow-md transform -translate-y-4 border-4 border-[#f8f9fa] active:scale-90 transition-transform">
+          <span className="material-symbols-outlined">add_box</span>
+        </button>
+        <Link href="/clients" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
+          <span className="material-symbols-outlined">group</span>
+          <span className="text-[10px] font-semibold uppercase">Clients</span>
+        </Link>
+        <Link href="/reports" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
+          <span className="material-symbols-outlined">analytics</span>
+          <span className="text-[10px] font-semibold uppercase">Reports</span>
+        </Link>
+      </nav>
     </div>
   );
 }
