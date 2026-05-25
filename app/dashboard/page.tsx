@@ -130,49 +130,48 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Metric Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            {/* Total Revenue */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-base font-semibold opacity-90">Total Revenue</p>
-                <span className="material-symbols-outlined opacity-80">trending_up</span>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">$428,500</h3>
-              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Increased by 12%</p>
-            </div>
+         {/* Metric Cards Grid */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+  {/* Total Revenue */}
+  <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+    <div className="flex justify-between items-start mb-2">
+      <p className="text-sm font-semibold opacity-90">Total Revenue</p>
+      <span className="material-symbols-outlined text-xl opacity-80">trending_up</span>
+    </div>
+    <h3 className="text-xl font-bold mb-3">$428,500</h3>
+    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Increased by 12%</p>
+  </div>
 
-            {/* Pending Bills */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-base font-semibold opacity-90">Pending Bills</p>
-                <span className="material-symbols-outlined opacity-80">receipt_long</span>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">42</h3>
-              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">8 priority invoices</p>
-            </div>
+  {/* Pending Bills */}
+  <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+    <div className="flex justify-between items-start mb-2">
+      <p className="text-sm font-semibold opacity-90">Pending Bills</p>
+      <span className="material-symbols-outlined text-xl opacity-80">receipt_long</span>
+    </div>
+    <h3 className="text-xl font-bold mb-3">42</h3>
+    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">8 priority invoices</p>
+  </div>
 
-            {/* New Customers */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-base font-semibold opacity-90">New Customers</p>
-                <span className="material-symbols-outlined opacity-80">group_add</span>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">128</h3>
-              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Increased by 5%</p>
-            </div>
+  {/* New Customers */}
+  <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+    <div className="flex justify-between items-start mb-2">
+      <p className="text-sm font-semibold opacity-90">New Customers</p>
+      <span className="material-symbols-outlined text-xl opacity-80">group_add</span>
+    </div>
+    <h3 className="text-xl font-bold mb-3">128</h3>
+    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Increased by 5%</p>
+  </div>
 
-            {/* Overdue Payments */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
-              <div className="flex justify-between items-start mb-4">
-                <p className="text-base font-semibold opacity-90">Overdue Payments</p>
-                <span className="material-symbols-outlined opacity-80">warning</span>
-              </div>
-              <h3 className="text-3xl font-bold mb-4">$14,230.50</h3>
-              <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Attention required</p>
-            </div>
-          </div>
-
+  {/* Overdue Payments */}
+  <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+    <div className="flex justify-between items-start mb-2">
+      <p className="text-sm font-semibold opacity-90">Overdue Payments</p>
+      <span className="material-symbols-outlined text-xl opacity-80">warning</span>
+    </div>
+    <h3 className="text-xl font-bold mb-3">$14,230.50</h3>
+    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Attention required</p>
+  </div>
+</div>
           {/* Middle Analytics Section */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
             {/* Chart Area */}

@@ -116,22 +116,22 @@ export default function InvoiceDashboard() {
           
           {/* Summary KPI Header Control Panel */}
           <section>
-            <div className="flex items-center justify-between flex-nowrap gap-4 mb-6">
-              {/* Left Side: Heading */}
-              <h2 className="text-2xl font-bold text-[#000613] whitespace-nowrap">Overview</h2>
-        
-              {/* Right Side: Action Buttons in One Line */}
-              <div className="flex items-center gap-3 flex-nowrap">
-                <button className="bg-[#006d37] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity whitespace-nowrap">
-                  <span className="material-symbols-outlined text-sm sm:text-base">add</span>
-                  Generate Invoice
-                </button>
-                <button className="bg-[#006d37] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity whitespace-nowrap">
-                  <span className="material-symbols-outlined text-sm sm:text-base">autorenew</span>
-                  Recurring Invoice
-                </button>
-              </div>
-            </div>
+           <div className="flex items-center justify-between flex-nowrap gap-4 mb-6">
+  {/* Left Side: Heading */}
+  <h2 className="text-2xl font-bold text-[#000613] whitespace-nowrap">Overview</h2>
+
+  {/* Right Side: Action Buttons in One Line */}
+  <div className="flex items-center gap-2.5 flex-nowrap">
+    <button className="bg-[#006d37] text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-md font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity whitespace-nowrap">
+      <span className="material-symbols-outlined text-xs sm:text-sm">add</span>
+      Generate Invoice
+    </button>
+    <button className="bg-[#006d37] text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-md font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity whitespace-nowrap">
+      <span className="material-symbols-outlined text-xs sm:text-sm">autorenew</span>
+      Recurring Invoice
+    </button>
+  </div>
+</div>
 
             {/* Metrics Layout Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
