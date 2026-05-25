@@ -180,7 +180,7 @@ export default function ReportsPage() {
             {/* Page Header */}
             <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
               <div>
-                <h2 className="text-3xl font-bold text-slate-900">
+                <h2 className="text-3xl font-bold text-[#064e3b]">
                   Reports & Analytics
                 </h2>
                 <p className="mt-1 text-sm text-slate-500">

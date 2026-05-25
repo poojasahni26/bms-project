@@ -177,41 +177,28 @@ export default function ClientsPage() {
               {/* Total Balance Amount Data Field */}
               <div className="relative overflow-hidden bg-gradient-to-br from-emerald-800 to-[#064e3b] p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
                 <div className="flex justify-between items-start mb-2">
-                  <p className="text-sm font-semibold opacity-90">Total Revenue</p>
-                  <span className="material-symbols-outlined p-1.5 text-xl rounded-lg text-emerald-200">account_balance_wallet</span>
+                  <p className="text-sm font-semibold opacity-90">Total Client</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">TZS 45.2M</h3>
-                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Across 128 clients</p>
+                <h3 className="text-2xl font-bold mb-3">1284</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">+12%</p>
               </div>
 
               {/* Verified Paid Metrics Block */}
               <div className="relative overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-500 p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
                 <div className="flex justify-between items-start mb-2">
-                  <p className="text-sm font-semibold opacity-90">Paid Invoices</p>
-                  <span className="material-symbols-outlined p-1.5 text-xl rounded-lg text-emerald-100">check_circle</span>
+                  <p className="text-sm font-semibold opacity-90">Active Invoices</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">TZS 32.8M</h3>
-                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">82% collection rate</p>
+                <h3 className="text-2xl font-bold mb-3">432</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Target: 500</p>
               </div>
 
               {/* Pending Transactions Track Ledger */}
               <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-500 p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
                 <div className="flex justify-between items-start mb-2">
-                  <p className="text-sm font-semibold opacity-90">Pending</p>
-                  <span className="material-symbols-outlined p-1.5 text-xl text-teal-100 rounded-lg">pending</span>
+                  <p className="text-sm font-semibold opacity-90">Pending Revenue</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">TZS 8.4M</h3>
-                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">14 invoices awaiting</p>
-              </div>
-
-              {/* Account Overdue Alert Feed Container */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-slate-700 to-slate-600 p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
-                <div className="flex justify-between items-start mb-2">
-                  <p className="text-sm font-semibold opacity-90">Overdue</p>
-                  <span className="material-symbols-outlined p-1.5 text-xl text-red-300 rounded-lg">warning</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3">TZS 4.0M</h3>
-                <p className="text-[11px] font-semibold bg-red-500/30 text-red-100 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Requires immediate action</p>
+                <h3 className="text-2xl font-bold mb-3">$42,900</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">-3%</p>
               </div>
 
             </div>

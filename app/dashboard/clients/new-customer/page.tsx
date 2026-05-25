@@ -16,7 +16,7 @@ export default function AddCustomerPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#f8fafc]">
+    <div className="flex min-h-screen bg-[#f8fafc] w-full">
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
@@ -59,7 +59,7 @@ export default function AddCustomerPage() {
         </nav>
 
         {/* User Profile Footer */}
-        <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
+        <div className="px-6 mb-20 md:mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
             <img
               alt="Operations Manager"
@@ -75,7 +75,7 @@ export default function AddCustomerPage() {
       </aside>
 
       {/* Main Content Area */}
-      <div className="flex-grow flex flex-col min-w-0">
+      <main className="flex-grow flex flex-col min-w-0 pb-16 md:pb-0">
         {/* Top App Bar */}
         <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -111,15 +111,14 @@ export default function AddCustomerPage() {
           </div>
         </header>
 
-        {/* Form Container Container */}
-        <main className="px-4 md:px-6 max-w-2xl mx-auto py-12 w-full">
+        {/* Form Container */}
+        <div className="px-4 md:px-6 max-w-2xl mx-auto py-12 w-full">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-[#064e3b]">Add New Customer</h1>
             <p className="mt-1 text-slate-500">Register corporate accounts and set global parameters.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            
             {/* Section 1: Basic Information */}
             <section className="bg-white p-6 rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-slate-200">
               <div className="flex items-center gap-2 mb-4 border-b border-slate-100 pb-3">
@@ -264,8 +263,8 @@ export default function AddCustomerPage() {
               </Link>
             </div>
           </form>
-        </main>
-      </div>
+        </div>
+      </main>
 
       {/* Mobile Sticky Navigation Menu */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-slate-200 bg-white py-2 md:hidden">
