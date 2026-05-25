@@ -120,12 +120,16 @@ export default function InvoiceDashboard() {
               <h2 className="text-2xl font-bold text-[#000613]">Overview</h2>
               <button className="bg-[#006d37] text-white px-6 py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity w-full sm:w-auto">
                 <span className="material-symbols-outlined">add</span>
-                Create Invoice
+                Generate Invoice
+              </button>
+              <button className="bg-[#006d37] text-white px-6 py-3 rounded-lg font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-opacity w-full sm:w-auto">
+                <span className="material-symbols-outlined">add</span>
+                Recurring Invoice
               </button>
             </div>
 
             {/* Metrics Layout Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Total Balance Amount Data Field */}
               <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-8 rounded-2xl shadow-lg text-white after:content-[''] after:absolute after:-top-[20%] after:-right-[10%] after:w-[150px] after:h-[150px] after:bg-white/15 after:rounded-full">
                 <div className="flex justify-between items-start mb-4">
