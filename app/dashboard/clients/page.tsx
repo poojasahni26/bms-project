@@ -172,7 +172,7 @@ export default function ClientsPage() {
 
           {/* Metrics Sections */}
           <section className="mb-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               
               {/* Total Balance Amount Data Field */}
               <div className="relative overflow-hidden bg-gradient-to-br from-emerald-800 to-[#064e3b] p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">

@@ -352,7 +352,7 @@ export default function GenerateInvoice() {
           <button className="flex-1 py-4 px-4 border border-[#006d37] text-[#006d37] font-semibold rounded-lg hover:bg-[#6bfe9c]/10 active:scale-95 transition-all">
             Save as Draft
           </button>
-          <button className="flex-[2] py-4 px-4 bg-[#000613] text-white font-semibold rounded-lg shadow-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
+          <button className="flex-[2] py-4 px-4 bg-[#006d37] text-white font-semibold rounded-lg shadow-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
             <span className="material-symbols-outlined">receipt_long</span>
             Generate Invoice
           </button>
