@@ -138,7 +138,7 @@ export default function Dashboard() {
                 <p className="text-base font-semibold opacity-90">Total Revenue</p>
                 <span className="material-symbols-outlined opacity-80">trending_up</span>
               </div>
-              <h3 className="text-3xl font-bold mb-4">$428,500.00</h3>
+              <h3 className="text-3xl font-bold mb-4">$428,500</h3>
               <p className="text-xs font-semibold bg-white/25 inline-block px-3 py-1 rounded-full backdrop-blur-sm">Increased by 12%</p>
             </div>
 
