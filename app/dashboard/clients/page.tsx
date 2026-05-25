@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 
 const clients = [
@@ -45,131 +47,115 @@ const statusStyles: Record<string, string> = {
   Overdue: "bg-red-100 text-red-700 border border-red-200",
 };
 
-function StatCard({
-  title,
-  value,
-  subtitle,
-  negative,
-}: {
-  title: string;
-  value: string;
-  subtitle: string;
-  negative?: boolean;
-}) {
-  return (
-    <div className="flex flex-col gap-2 rounded-xl border border-slate-100 bg-white p-6 shadow-sm">
-      <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-        {title}
-      </span>
-
-      <div className="flex items-baseline justify-between">
-        <span className="text-4xl font-bold text-slate-900">{value}</span>
-        <span
-          className={`flex items-center text-sm font-semibold ${
-            negative ? "text-red-600" : "text-emerald-600"
-          }`}
-        >
-          {subtitle}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export default function ClientsPage() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div>
+    <div className="flex min-h-screen bg-[#f8fafc] w-full">
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
       />
       
-      {/* Sidebar Navigation */}
-      <aside className="h-full w-64 fixed left-0 top-0 z-50 bg-slate-900 border-r border-slate-800 shadow-2xl flex flex-col py-6">
-        <div className="px-6 mb-8">
-          <span className="text-white text-xl font-black">BMS Institutional</span>
+      {/* Navigation Drawer */}
+      <aside className={`fixed lg:sticky top-0 left-0 h-screen w-[280px] bg-white border-r border-[#c9c4d8] z-[70] transition-transform duration-300 overflow-y-auto flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
+        <div className="p-6 flex items-center gap-3">
+          <div className="w-10 h-10 bg-[#064e3b] rounded-xl flex items-center justify-center shadow-lg">
+            <span className="material-symbols-outlined text-white">bolt</span>
+          </div>
+          <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
         </div>
 
-        <div className="px-6 mb-10 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 relative">
-            <img
-              alt="Operations Manager"
-              className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz3welp1P-T7tg1mJzAFynbnlVZ8e5H4GQrAr6L54LsLghsdytfyEXCVRz6A0zZvyDRxfSDFenpHBRyJ5msC3QJtRpXLMKCBe-KTyWna1AukHJUlz2uGouseZZou67wdTZc9Vjux24wzSg0SRRjxmm6aR9SzI8AS2Jtb-CGY6lv6ej3O7FHquqDG5uUqrckmYyByfBU_DkVyrC1oFxQlsGfkCRhzWb3-uSHG4L_fvRXQUhk_r3nQBdHpvgtKa-NiKbKsc6IFomf8I"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-white font-medium text-sm">Operations Manager</span>
-            <span className="text-slate-400 text-xs">Admin User</span>
-          </div>
-        </div>
-
-        <nav className="flex-1 space-y-1">
-          <Link href="/dashboard" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+        <nav className="flex-1 space-y-1 text-lg px-4">
+          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="/dashboard/invoices" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">receipt_long</span>
             <span className="text-sm font-medium">Invoices</span>
           </Link>
-          <Link href="/dashboard/payments" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">payments</span>
             <span className="text-sm font-medium">Payments</span>
           </Link>
-          <Link href="/dashboard/clients" className="text-white px-4 py-3 flex items-center gap-3 bg-slate-800 transition-all">
+          <Link href="/dashboard/clients" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">group</span>
             <span className="text-sm font-medium">Clients</span>
           </Link>
-          <Link href="/dashboard/reports" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all">
+          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">analytics</span>
             <span className="text-sm font-medium">Reports</span>
           </Link>
-          <Link href="/dashboard/settings" className="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-slate-800/50 transition-all duration-200">
+          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200 rounded-lg">
             <span className="material-symbols-outlined">settings</span>
             <span className="text-sm font-medium">Settings</span>
           </Link>
         </nav>
+
+        {/* User Profile Footer */}
+        <div className="px-6 mb-20 md:mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
+          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
+            <img
+              alt="Operations Manager"
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+            />
+          </div>
+          <div className="flex flex-col min-w-0">
+            <span className="text-slate-800 font-semibold text-sm truncate">Operations Manager</span>
+            <span className="text-slate-500 text-xs">Admin User</span>
+          </div>
+        </div>
       </aside>
 
-      {/* Main Content Areas */}
-      <main className="ml-64 min-h-screen">
-        {/* Top Bar */}
-        <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center px-6 py-3 sticky top-0 z-40">
+      {/* Main Content Area */}
+      <main className="flex-grow flex flex-col min-w-0 pb-16 md:pb-0">
+        {/* Top App Bar */}
+        <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="material-symbols-outlined text-slate-900 cursor-pointer">menu</span>
-            <h1 className="text-lg font-bold text-slate-900">Billing Management</h1>
+            <button className="lg:hidden p-2 hover:bg-[#f0f4fb] rounded-full transition-colors" onClick={toggleSidebar}>
+              <span className="material-symbols-outlined text-[#064e3b]">menu</span>
+            </button>
+            <h1 className="hidden md:block text-xl text-[#064e3b] font-bold">Billing Management</h1>
+            <h1 className="md:hidden text-xl text-[#064e3b] font-bold">BMS</h1>
           </div>
 
-          <div className="flex-1 max-w-xl px-12">
-            <div className="relative">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-                search
-              </span>
-              <input
-                className="w-full bg-slate-100 border-none rounded-lg py-2 pl-10 pr-4 focus:ring-2 focus:ring-slate-300 text-sm"
-                placeholder="Search invoices, clients, or reports..."
-                type="text"
+          {/* Search Bar */}
+          <div className="flex-grow max-w-xl px-4">
+            <div className="relative group">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#484555] opacity-60 group-focus-within:text-[#064e3b] transition-colors">search</span>
+              <input 
+                className="w-full bg-[#f0f4fb] border-none rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-[#064e3b]/20 transition-all placeholder:text-[#484555] placeholder:opacity-50" 
+                placeholder="Search invoices, clients, or reports..." 
+                type="text" 
               />
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full cursor-pointer transition-colors">
-              notifications
-            </span>
-            <div className="w-8 h-8 rounded-full bg-[#001f3f] flex items-center justify-center text-white text-xs font-bold">
-              JD
+          <div className="flex items-center gap-2 md:gap-4">
+            <button className="p-2 hover:bg-[#f0f4fb] rounded-full transition-colors relative">
+              <span className="material-symbols-outlined text-[#064e3b]">notifications</span>
+              <span className="absolute top-2 right-2 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
+            </button>
+            <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-[#c9c4d8]/30">
+              <div className="w-8 h-8 rounded-full bg-[#064e3b] flex items-center justify-center text-white text-xs font-bold">
+                GT
+              </div>
             </div>
           </div>
         </header>
 
         {/* Content Wrapper */}
-        <div className="flex max-w-7xl flex-col gap-8 p-8">
+        <div className="flex w-full max-w-7xl flex-col gap-8 p-4 md:p-8">
           {/* Page Header */}
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900">Customer Management</h2>
+              <h2 className="text-3xl font-bold text-[#064e3b]">Customer Management</h2>
               <p className="mt-1 text-slate-500">
                 Manage institutional clients and their billing status.
               </p>
@@ -177,18 +163,58 @@ export default function ClientsPage() {
 
             <Link
               href="/dashboard/clients/new-customer"
-              className="flex items-center gap-2 rounded-lg bg-slate-950 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-slate-800"
+              className="flex items-center gap-2 rounded-lg bg-[#064e3b] px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-[#064e3b]/90"
             >
-              <span>+</span>
+              <span className="text-xl font-light">+</span>
               <span>Add New Customer</span>
             </Link>
           </div>
 
           {/* Metrics Sections */}
-          <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <StatCard title="Total Clients" value="1,284" subtitle="+12%" />
-            <StatCard title="Active Invoices" value="432" subtitle="Target: 500" />
-            <StatCard title="Pending Revenue" value="$42,900" subtitle="-3%" negative />
+          <section className="mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              {/* Total Balance Amount Data Field */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-emerald-800 to-[#064e3b] p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Total Revenue</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl rounded-lg text-emerald-200">account_balance_wallet</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">TZS 45.2M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Across 128 clients</p>
+              </div>
+
+              {/* Verified Paid Metrics Block */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-500 p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Paid Invoices</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl rounded-lg text-emerald-100">check_circle</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">TZS 32.8M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">82% collection rate</p>
+              </div>
+
+              {/* Pending Transactions Track Ledger */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-500 p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Pending</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl text-teal-100 rounded-lg">pending</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">TZS 8.4M</h3>
+                <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">14 invoices awaiting</p>
+              </div>
+
+              {/* Account Overdue Alert Feed Container */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-slate-700 to-slate-600 p-5 rounded-xl shadow-sm text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+                <div className="flex justify-between items-start mb-2">
+                  <p className="text-sm font-semibold opacity-90">Overdue</p>
+                  <span className="material-symbols-outlined p-1.5 text-xl text-red-300 rounded-lg">warning</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">TZS 4.0M</h3>
+                <p className="text-[11px] font-semibold bg-red-500/30 text-red-100 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Requires immediate action</p>
+              </div>
+
+            </div>
           </section>
 
           {/* Table Representation */}
@@ -196,7 +222,7 @@ export default function ClientsPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-left">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-100">
+                  <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500">Client Name</th>
                     <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500">Email Address</th>
                     <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500">Total Bills</th>
@@ -209,7 +235,7 @@ export default function ClientsPage() {
                     <tr key={client.email} className="transition-colors hover:bg-slate-50">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded bg-slate-100 font-bold text-slate-900">
+                          <div className="flex h-10 w-10 items-center justify-center rounded bg-emerald-50 font-bold text-[#064e3b]">
                             {client.initials}
                           </div>
                           <span className="font-semibold text-slate-900">{client.name}</span>
@@ -224,8 +250,8 @@ export default function ClientsPage() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex justify-end gap-2">
-                          <button className="rounded p-2 text-slate-400 transition-colors hover:text-slate-900">Edit</button>
-                          <button className="rounded p-2 text-slate-400 transition-colors hover:text-slate-900">View</button>
+                          <button className="rounded p-2 text-slate-400 transition-colors hover:text-[#064e3b] font-medium text-sm">Edit</button>
+                          <button className="rounded p-2 text-slate-400 transition-colors hover:text-[#064e3b] font-medium text-sm">View</button>
                         </div>
                       </td>
                     </tr>
@@ -235,11 +261,11 @@ export default function ClientsPage() {
             </div>
 
             {/* Pagination Controls */}
-            <div className="flex items-center justify-between border-t border-slate-200 bg-slate-100 px-6 py-4">
+            <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-4">
               <span className="text-sm text-slate-500">Showing 1 to 5 of 1,284 clients</span>
               <div className="flex gap-1">
                 <button className="flex h-8 w-8 items-center justify-center rounded text-slate-600 transition-colors hover:bg-slate-200">←</button>
-                <button className="flex h-8 w-8 items-center justify-center rounded bg-slate-950 text-sm font-semibold text-white">1</button>
+                <button className="flex h-8 w-8 items-center justify-center rounded bg-[#064e3b] text-sm font-semibold text-white">1</button>
                 <button className="flex h-8 w-8 items-center justify-center rounded text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-200">2</button>
                 <button className="flex h-8 w-8 items-center justify-center rounded text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-200">3</button>
                 <button className="flex h-8 w-8 items-center justify-center rounded text-slate-600 transition-colors hover:bg-slate-200">→</button>
@@ -254,8 +280,8 @@ export default function ClientsPage() {
         {["Home", "Invoices", "Clients", "Settings"].map((item) => (
           <button
             key={item}
-            className={`flex flex-col items-center gap-1 text-[10px] ${
-              item === "Clients" ? "font-bold text-slate-950" : "text-slate-500"
+            className={`flex flex-col items-center gap-1 text-[10px] transition-colors ${
+              item === "Clients" ? "font-bold text-[#064e3b]" : "text-slate-500 hover:text-slate-800"
             }`}
           >
             <span>{item}</span>
