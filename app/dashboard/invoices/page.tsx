@@ -61,6 +61,7 @@ export default function InvoiceDashboard() {
         {/* User Profile Footer */}
         <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="Operations Manager"
               className="w-full h-full object-cover"
@@ -116,22 +117,22 @@ export default function InvoiceDashboard() {
           
           {/* Summary KPI Header Control Panel */}
           <section>
-           <div className="flex items-center justify-between flex-nowrap gap-4 mb-6">
-  {/* Left Side: Heading */}
-  <h2 className="text-2xl font-bold text-[#000613] whitespace-nowrap">Overview</h2>
+            <div className="flex items-center justify-between flex-nowrap gap-4 mb-6">
+              {/* Left Side: Heading */}
+              <h2 className="text-2xl font-bold text-[#000613] whitespace-nowrap">Overview</h2>
 
-  {/* Right Side: Action Buttons in One Line */}
-  <div className="flex items-center gap-2.5 flex-nowrap">
-    <button className="bg-[#006d37] text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-md font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity whitespace-nowrap">
-      <span className="material-symbols-outlined text-xs sm:text-sm">add</span>
-      Generate Invoice
-    </button>
-    <button className="bg-[#006d37] text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-md font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity whitespace-nowrap">
-      <span className="material-symbols-outlined text-xs sm:text-sm">autorenew</span>
-      Recurring Invoice
-    </button>
-  </div>
-</div>
+              {/* Right Side: Action Buttons Component Conversion */}
+              <div className="flex items-center gap-2.5 flex-nowrap">
+                <Link href="/dashboard/invoices/generateinvoice" className="bg-[#006d37] text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-md font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity whitespace-nowrap">
+                  <span className="material-symbols-outlined text-xs sm:text-sm">add</span>
+                  Generate Invoice
+                </Link>
+                <Link href="/dashboard/invoices/recurringinvoice" className="bg-[#006d37] text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-md font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity whitespace-nowrap">
+                  <span className="material-symbols-outlined text-xs sm:text-sm">autorenew</span>
+                  Recurring Invoice
+                </Link>
+              </div>
+            </div>
 
             {/* Metrics Layout Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -324,18 +325,18 @@ export default function InvoiceDashboard() {
           <span className="material-symbols-outlined">home</span>
           <span className="text-[10px] font-semibold uppercase">Home</span>
         </Link>
-        <Link href="/invoices" className="text-[#006d37] flex flex-col items-center justify-center gap-1">
+        <Link href="/dashboard/invoices" className="text-[#006d37] flex flex-col items-center justify-center gap-1">
           <span className="material-symbols-outlined">receipt</span>
           <span className="text-[10px] font-semibold uppercase">Invoices</span>
         </Link>
         <button className="w-12 h-12 bg-[#001f3f] text-white rounded-full flex items-center justify-center shadow-md transform -translate-y-4 border-4 border-[#f8f9fa] active:scale-90 transition-transform">
           <span className="material-symbols-outlined">add_box</span>
         </button>
-        <Link href="/clients" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
+        <Link href="/dashboard/clients" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
           <span className="material-symbols-outlined">group</span>
           <span className="text-[10px] font-semibold uppercase">Clients</span>
         </Link>
-        <Link href="/reports" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
+        <Link href="/dashboard/reports" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
           <span className="material-symbols-outlined">analytics</span>
           <span className="text-[10px] font-semibold uppercase">Reports</span>
         </Link>

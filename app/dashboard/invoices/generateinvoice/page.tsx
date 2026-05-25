@@ -85,7 +85,7 @@ export default function GenerateInvoice() {
       `}} />
       
       {/* Navigation Drawer */}
-      <aside className={`fixed lg:sticky top-0 left-0 h-screen w-[280px] bg-white border-r border-[#c9c4d8] z-[70] transition-transform duration-300 overflow-y-auto flex flex-col flex-shrink-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
+      <aside className={`fixed lg:sticky top-0 left-0 h-screen w-[280px] bg-white border-r border-[#c9c4d8] z-[70] transition-transform duration-300 overflow-y-auto flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
         <div className="p-6 flex items-center gap-3">
           <div className="w-10 h-10 bg-[#064e3b] rounded-xl flex items-center justify-center shadow-lg">
             <span className="material-symbols-outlined text-white">bolt</span>
@@ -122,14 +122,11 @@ export default function GenerateInvoice() {
 
         {/* User Profile Footer */}
         <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
-          <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
-            <Image
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 flex-shrink-0">
+            <img
               alt="Operations Manager"
-              fill
-              sizes="40px"
-              className="object-cover"
-              priority
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
             />
           </div>
           <div className="flex flex-col min-w-0">
@@ -139,10 +136,10 @@ export default function GenerateInvoice() {
         </div>
       </aside>
 
-      {/* Main Content Area Container */}
-      <div className="flex-grow flex flex-col min-w-0 w-full">
+      {/* Main Content Area */}
+      <div className="flex-grow flex flex-col min-w-0">
         {/* Top App Bar */}
-        <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between h-[72px]">
+        <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button className="lg:hidden p-2 hover:bg-[#f0f4fb] rounded-full transition-colors" onClick={toggleSidebar}>
               <span className="material-symbols-outlined text-[#064e3b]">menu</span>
