@@ -131,7 +131,7 @@ export default function CombinedRecurringInvoicePage() {
             <span>/</span>
             <span className="text-slate-800">Setup Recurring Schedule</span>
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Configure Recurring Invoice</h2>
+          <h2 className="text-2xl font-bold text-[#064e3b]">Configure Recurring Invoice</h2>
         </div>
 
         {/* Primary Functional Stream Inputs */}
@@ -168,7 +168,7 @@ export default function CombinedRecurringInvoicePage() {
                   <input 
                     className="w-full bg-[#f0f4fb] border border-[#c9c4d8]/40 rounded-lg px-3 py-2 text-sm text-[#191c1d] focus:ring-2 focus:ring-[#064e3b]/30 outline-none" 
                     type="date" 
-                    defaultValue="2023-11-01"
+                    defaultValue="2026-06-01"
                   />
                 </div>
                 <div className={`space-y-2 transition-opacity duration-200 ${neverEnds ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
@@ -177,7 +177,7 @@ export default function CombinedRecurringInvoicePage() {
                     className="w-full bg-[#f0f4fb] border border-[#c9c4d8]/40 rounded-lg px-3 py-2 text-sm text-[#191c1d] outline-none" 
                     disabled={neverEnds} 
                     type="date" 
-                    defaultValue="2024-11-01"
+                    defaultValue="2026-06-30"
                   />
                 </div>
               </div>
@@ -322,7 +322,7 @@ export default function CombinedRecurringInvoicePage() {
             </div>
             <div>
               <p className="text-sm text-slate-700 font-medium">Next generation trigger runtime date</p>
-              <p className="text-xl font-extrabold text-[#064e3b]">November 1, 2023</p>
+              <p className="text-xl font-extrabold text-[#064e3b]">June 1, 2026</p>
               <p className="text-[11px] font-bold tracking-wider text-slate-500 mt-1 uppercase">RECURRING COMMITMENT VALUE: $2,950.00</p>
             </div>
           </section>
