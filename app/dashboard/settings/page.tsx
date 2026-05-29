@@ -1,4 +1,3 @@
-// app/settings/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -28,7 +27,7 @@ export default function SettingsPage() {
           <h1 className="text-xl text-[#064e3b] font-bold">Green Telecom BMS</h1>
         </div>
 
-       <nav className="flex-1 space-y-1 text-lg px-4">
+        <nav className="flex-1 space-y-1 text-lg px-4">
           <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
@@ -203,12 +202,12 @@ export default function SettingsPage() {
       </div>
 
       {/* Bottom Navigation (Mobile Viewports Only) */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between bg-white/95 px-6 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] backdrop-blur-md md:hidden">
-        <BottomNavItem icon="dashboard" label="Dashboard" />
-        <BottomNavItem icon="receipt_long" label="Invoices" />
-        <BottomNavItem icon="payments" label="Payments" />
-        <BottomNavItem icon="analytics" label="Reports" />
-        <BottomNavItem icon="settings" label="Settings" active />
+      <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-slate-200 bg-white py-2 shadow-lg md:hidden">
+        <BottomNavItem icon="dashboard" label="Dashboard" path="/dashboard" />
+        <BottomNavItem icon="receipt_long" label="Invoices" path="/dashboard/invoices" />
+        <BottomNavItem icon="payments" label="Payments" path="/dashboard/payments" />
+        <BottomNavItem icon="analytics" label="Reports" path="/dashboard/reports" />
+        <BottomNavItem icon="settings" label="Settings" path="/dashboard/settings" active />
       </nav>
     </div>
   );
@@ -313,16 +312,19 @@ function Divider() {
 function BottomNavItem({
   icon,
   label,
+  path,
   active = false,
 }: {
   icon: string;
   label: string;
+  path: string;
   active?: boolean;
 }) {
   return (
-    <div
-      className={`flex cursor-pointer flex-col items-center gap-1 ${
-        active ? "font-semibold text-slate-900" : "text-slate-400"
+    <Link
+      href={path}
+      className={`flex flex-col items-center gap-1 transition-colors ${
+        active ? "text-[#064e3b] font-semibold" : "text-slate-400 hover:text-slate-600"
       }`}
     >
       <span
@@ -334,6 +336,6 @@ function BottomNavItem({
         {icon}
       </span>
       <span className="text-[10px]">{label}</span>
-    </div>
+    </Link>
   );
 }

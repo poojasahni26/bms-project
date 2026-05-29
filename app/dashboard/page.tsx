@@ -32,27 +32,27 @@ export default function Dashboard() {
         </div>
 
         <nav className="flex-1 space-y-1 text-lg px-4">
-          <Link href="/dashboard" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+          <Link href="/dashboard" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">receipt_long</span>
             <span className="text-sm font-medium">Invoices</span>
           </Link>
-          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">payments</span>
             <span className="text-sm font-medium">Payments</span>
           </Link>
-          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">group</span>
             <span className="text-sm font-medium">Clients</span>
           </Link>
-          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">analytics</span>
             <span className="text-sm font-medium">Reports</span>
           </Link>
-          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200">
+          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200 rounded-lg">
             <span className="material-symbols-outlined">settings</span>
             <span className="text-sm font-medium">Settings</span>
           </Link>
@@ -130,48 +130,49 @@ export default function Dashboard() {
             </div>
           </div>
 
-         {/* Metric Cards Grid */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-  {/* Total Revenue */}
-  <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
-    <div className="flex justify-between items-start mb-2">
-      <p className="text-sm font-semibold opacity-90">Total Revenue</p>
-      <span className="material-symbols-outlined text-xl opacity-80">trending_up</span>
-    </div>
-    <h3 className="text-xl font-bold mb-3">$428,500</h3>
-    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Increased by 12%</p>
-  </div>
+          {/* Metric Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {/* Total Revenue */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-500 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-2">
+                <p className="text-sm font-semibold opacity-90">Total Revenue</p>
+                <span className="material-symbols-outlined text-xl opacity-80">trending_up</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">$428,500</h3>
+              <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Increased by 12%</p>
+            </div>
 
-  {/* Pending Bills */}
-  <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
-    <div className="flex justify-between items-start mb-2">
-      <p className="text-sm font-semibold opacity-90">Pending Bills</p>
-      <span className="material-symbols-outlined text-xl opacity-80">receipt_long</span>
-    </div>
-    <h3 className="text-xl font-bold mb-3">42</h3>
-    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">8 priority invoices</p>
-  </div>
+            {/* Pending Bills */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-sky-600 to-sky-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-2">
+                <p className="text-sm font-semibold opacity-90">Pending Bills</p>
+                <span className="material-symbols-outlined text-xl opacity-80">receipt_long</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">42</h3>
+              <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">8 priority invoices</p>
+            </div>
 
-  {/* New Customers */}
-  <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
-    <div className="flex justify-between items-start mb-2">
-      <p className="text-sm font-semibold opacity-90">New Customers</p>
-      <span className="material-symbols-outlined text-xl opacity-80">group_add</span>
-    </div>
-    <h3 className="text-xl font-bold mb-3">128</h3>
-    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Increased by 5%</p>
-  </div>
+            {/* New Customers */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-teal-600 to-teal-400 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-2">
+                <p className="text-sm font-semibold opacity-90">New Customers</p>
+                <span className="material-symbols-outlined text-xl opacity-80">group_add</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">128</h3>
+              <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Increased by 5%</p>
+            </div>
 
-  {/* Overdue Payments */}
-  <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
-    <div className="flex justify-between items-start mb-2">
-      <p className="text-sm font-semibold opacity-90">Overdue Payments</p>
-      <span className="material-symbols-outlined text-xl opacity-80">warning</span>
-    </div>
-    <h3 className="text-xl font-bold mb-3">$14,230.50</h3>
-    <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Attention required</p>
-  </div>
-</div>
+            {/* Overdue Payments */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-blue-800 to-blue-600 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
+              <div className="flex justify-between items-start mb-2">
+                <p className="text-sm font-semibold opacity-90">Overdue Payments</p>
+                <span className="material-symbols-outlined text-xl opacity-80">warning</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">$14,230.50</h3>
+              <p className="text-[11px] font-semibold bg-white/25 inline-block px-2.5 py-0.5 rounded-full backdrop-blur-sm">Attention required</p>
+            </div>
+          </div>
+
           {/* Middle Analytics Section */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
             {/* Chart Area */}
@@ -320,24 +321,28 @@ export default function Dashboard() {
       </div>
 
       {/* Bottom Nav Bar for Mobile UI */}
-      <nav className="fixed bottom-0 w-full z-50 bg-white shadow-lg rounded-t-xl flex justify-around items-center px-4 pb-6 pt-3 lg:hidden border-t border-[#c9c4d8]/30">
+      <nav className="fixed bottom-0 w-full z-50 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl flex justify-around items-center px-4 pb-6 pt-3 lg:hidden border-t border-[#c9c4d8]/30">
         {[
-          { icon: 'dashboard', label: 'Dashboard', active: true },
-          { icon: 'receipt_long', label: 'Invoices' },
-          { icon: 'group', label: 'Clients' },
-          { icon: 'settings', label: 'Settings' }
+          { icon: 'dashboard', label: 'Dashboard', href: '/dashboard', active: true },
+          { icon: 'receipt_long', label: 'Invoices', href: '/dashboard/invoices' },
+          { icon: 'group', label: 'Clients', href: '/dashboard/clients' },
+          { icon: 'settings', label: 'Settings', href: '/dashboard/settings' }
         ].map((item) => (
-          <div key={item.label} className={`flex flex-col items-center justify-center rounded-full px-6 py-2 transition-transform duration-150 cursor-pointer active:scale-90 ${item.active ? 'text-[#064e3b]' : 'text-[#484555] opacity-70'}`}>
+          <Link 
+            key={item.label} 
+            href={item.href}
+            className={`flex flex-col items-center justify-center rounded-full px-4 py-2 transition-transform duration-150 cursor-pointer active:scale-90 ${item.active ? 'text-[#064e3b]' : 'text-[#484555] opacity-70'}`}
+          >
             <span className="material-symbols-outlined">{item.icon}</span>
-            <span className="text-xs font-semibold">{item.label}</span>
-          </div>
+            <span className="text-xs font-semibold mt-0.5">{item.label}</span>
+          </Link>
         ))}
       </nav>
 
       {/* Contextual Floating Action Button */}
-      <button className="fixed bottom-24 right-8 w-14 h-14 bg-[#064e3b] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all duration-200 z-40">
+      <Link href="/dashboard/issue" className="fixed bottom-24 right-8 w-14 h-14 bg-[#064e3b] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all duration-200 z-40 lg:hidden">
         <span className="material-symbols-outlined">add</span>
-      </button>
+      </Link>
     </div>
   );
 }

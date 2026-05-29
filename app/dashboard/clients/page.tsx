@@ -55,7 +55,7 @@ export default function ClientsPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#f8fafc] w-full">
+    <div className="flex min-h-screen bg-[#f8fafc] w-full pb-24 md:pb-0">
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
@@ -263,17 +263,27 @@ export default function ClientsPage() {
       </main>
 
       {/* Mobile Sticky Navigation Menu */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-slate-200 bg-white py-2 md:hidden">
-        {["Home", "Invoices", "Clients", "Settings"].map((item) => (
-          <button
-            key={item}
-            className={`flex flex-col items-center gap-1 text-[10px] transition-colors ${
-              item === "Clients" ? "font-bold text-[#064e3b]" : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            <span>{item}</span>
-          </button>
-        ))}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-slate-200 bg-white py-2 lg:hidden">
+        {[
+          { name: "Home", icon: "dashboard", href: "/dashboard" },
+          { name: "Invoices", icon: "receipt_long", href: "/dashboard/invoices" },
+          { name: "Clients", icon: "group", href: "/dashboard/clients" },
+          { name: "Settings", icon: "settings", href: "/dashboard/settings" },
+        ].map((item) => {
+          const isActive = item.name === "Clients";
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`flex flex-col items-center gap-0.5 text-[11px] transition-colors ${
+                isActive ? "font-bold text-[#064e3b]" : "text-slate-500 hover:text-slate-800"
+              }`}
+            >
+              <span className="material-symbols-outlined text-[22px]">{item.icon}</span>
+              <span>{item.name}</span>
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );

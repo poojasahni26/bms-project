@@ -1,4 +1,3 @@
-// app/reports/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -59,7 +58,6 @@ const invoices = [
 ];
 
 export default function ReportsPage() {
-  // Fixes the compile error by introducing the missing state hook
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -95,32 +93,32 @@ export default function ReportsPage() {
             </button>
           </div>
 
-         <nav className="flex-1 space-y-1 text-lg px-4">
-          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
-            <span className="material-symbols-outlined">dashboard</span>
-            <span className="text-sm font-medium">Dashboard</span>
-          </Link>
-          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
-            <span className="material-symbols-outlined">receipt_long</span>
-            <span className="text-sm font-medium">Invoices</span>
-          </Link>
-          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
-            <span className="material-symbols-outlined">payments</span>
-            <span className="text-sm font-medium">Payments</span>
-          </Link>
-          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
-            <span className="material-symbols-outlined">group</span>
-            <span className="text-sm font-medium">Clients</span>
-          </Link>
-          <Link href="/dashboard/reports"className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
-            <span className="material-symbols-outlined">analytics</span>
-            <span className="text-sm font-medium">Reports</span>
-          </Link>
-          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200">
-            <span className="material-symbols-outlined">settings</span>
-            <span className="text-sm font-medium">Settings</span>
-          </Link>
-        </nav>
+          <nav className="flex-1 space-y-1 text-lg px-4">
+            <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+              <span className="material-symbols-outlined">dashboard</span>
+              <span className="text-sm font-medium">Dashboard</span>
+            </Link>
+            <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+              <span className="material-symbols-outlined">receipt_long</span>
+              <span className="text-sm font-medium">Invoices</span>
+            </Link>
+            <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+              <span className="material-symbols-outlined">payments</span>
+              <span className="text-sm font-medium">Payments</span>
+            </Link>
+            <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+              <span className="material-symbols-outlined">group</span>
+              <span className="text-sm font-medium">Clients</span>
+            </Link>
+            <Link href="/dashboard/reports" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+              <span className="material-symbols-outlined">analytics</span>
+              <span className="text-sm font-medium">Reports</span>
+            </Link>
+            <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200">
+              <span className="material-symbols-outlined">settings</span>
+              <span className="text-sm font-medium">Settings</span>
+            </Link>
+          </nav>
 
           {/* User Profile Footer */}
           <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">
@@ -404,14 +402,15 @@ export default function ReportsPage() {
       {/* Mobile Bottom Nav */}
       <nav className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around border-t border-slate-200 bg-white py-2 shadow-lg md:hidden">
         {[
-          { label: "Home", icon: "dashboard" },
-          { label: "Invoices", icon: "receipt_long" },
-          { label: "Reports", icon: "analytics", active: true },
-          { label: "Clients", icon: "group" },
-          { label: "Settings", icon: "settings" },
+          { label: "Home", icon: "dashboard", path: "/dashboard" },
+          { label: "Invoices", icon: "receipt_long", path: "/dashboard/invoices" },
+          { label: "Reports", icon: "analytics", path: "/dashboard/reports", active: true },
+          { label: "Clients", icon: "group", path: "/dashboard/clients" },
+          { label: "Settings", icon: "settings", path: "/dashboard/settings" },
         ].map((item) => (
-          <button
+          <Link
             key={item.label}
+            href={item.path}
             className={`flex flex-col items-center gap-1 transition-colors ${
               item.active
                 ? "text-[#064e3b] font-semibold"
@@ -424,7 +423,7 @@ export default function ReportsPage() {
             <span className="text-[10px]">
               {item.label}
             </span>
-          </button>
+          </Link>
         ))}
       </nav>
     </>

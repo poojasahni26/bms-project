@@ -319,27 +319,28 @@ export default function InvoiceDashboard() {
         </main>
       </div>
 
-      {/* Global Context Bottom Navigation Dock Layout (Mobile viewports only) */}
-      <nav className="fixed bottom-0 left-0 w-full h-[72px] lg:hidden bg-[#f8f9fa] border-t border-[#c4c6cf] shadow-lg flex justify-around items-center px-4 z-50">
-        <Link href="/dashboard" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
-          <span className="material-symbols-outlined">home</span>
-          <span className="text-[10px] font-semibold uppercase">Home</span>
-        </Link>
-        <Link href="/dashboard/invoices" className="text-[#006d37] flex flex-col items-center justify-center gap-1">
-          <span className="material-symbols-outlined">receipt</span>
-          <span className="text-[10px] font-semibold uppercase">Invoices</span>
-        </Link>
-        <button className="w-12 h-12 bg-[#001f3f] text-white rounded-full flex items-center justify-center shadow-md transform -translate-y-4 border-4 border-[#f8f9fa] active:scale-90 transition-transform">
-          <span className="material-symbols-outlined">add_box</span>
-        </button>
-        <Link href="/dashboard/clients" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
-          <span className="material-symbols-outlined">group</span>
-          <span className="text-[10px] font-semibold uppercase">Clients</span>
-        </Link>
-        <Link href="/dashboard/reports" className="text-[#43474e] flex flex-col items-center justify-center gap-1">
-          <span className="material-symbols-outlined">analytics</span>
-          <span className="text-[10px] font-semibold uppercase">Reports</span>
-        </Link>
+      {/* Mobile Sticky Navigation Menu */}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-[#c9c4d8] bg-white py-2 lg:hidden shadow-lg">
+        {[
+          { name: "Home", icon: "dashboard", href: "/dashboard" },
+          { name: "Invoices", icon: "receipt_long", href: "/dashboard/invoices" },
+          { name: "Clients", icon: "group", href: "/dashboard/clients" },
+          { name: "Settings", icon: "settings", href: "/dashboard/settings" },
+        ].map((item) => {
+          const isActive = item.name === "Invoices";
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`flex flex-col items-center gap-0.5 text-[11px] transition-colors ${
+                isActive ? "font-bold text-[#064e3b]" : "text-slate-500 hover:text-slate-800"
+              }`}
+            >
+              <span className="material-symbols-outlined text-[22px]">{item.icon}</span>
+              <span>{item.name}</span>
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );

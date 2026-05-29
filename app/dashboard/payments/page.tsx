@@ -66,12 +66,20 @@ export default function PaymentsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f9fa] text-slate-900 flex">
+    <div className="min-h-screen bg-[#f8f9fa] text-slate-900 pb-32 lg:pb-0 lg:flex font-sans">
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
       />
       
+      {/* Sidebar Overlay for Mobile */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-[60] lg:hidden" 
+          onClick={toggleSidebar}
+        />
+      )}
+
       {/* Navigation Drawer */}
       <aside className={`fixed lg:sticky top-0 left-0 h-screen w-[280px] bg-white border-r border-[#c9c4d8] z-[70] transition-transform duration-300 overflow-y-auto flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
         <div className="p-6 flex items-center gap-3">
@@ -82,27 +90,27 @@ export default function PaymentsPage() {
         </div>
 
         <nav className="flex-1 space-y-1 text-lg px-4">
-          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">receipt_long</span>
             <span className="text-sm font-medium">Invoices</span>
           </Link>
-          <Link href="/dashboard/payments" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+          <Link href="/dashboard/payments" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">payments</span>
             <span className="text-sm font-medium">Payments</span>
           </Link>
-          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">group</span>
             <span className="text-sm font-medium">Clients</span>
           </Link>
-          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+          <Link href="/dashboard/reports" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all rounded-lg">
             <span className="material-symbols-outlined">analytics</span>
             <span className="text-sm font-medium">Reports</span>
           </Link>
-          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200">
+          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200 rounded-lg">
             <span className="material-symbols-outlined">settings</span>
             <span className="text-sm font-medium">Settings</span>
           </Link>
@@ -125,7 +133,7 @@ export default function PaymentsPage() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-grow flex flex-col min-w-0">
+      <div className="flex-grow flex flex-col min-w-0">
         {/* Top App Bar */}
         <header className="w-full sticky top-0 z-50 bg-white border-b border-[#c9c4d8] px-4 md:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -161,7 +169,7 @@ export default function PaymentsPage() {
           </div>
         </header>
 
-        <div className="p-8">
+        <main className="max-w-7xl mx-auto p-4 md:p-8 flex-grow w-full">
           {/* Header */}
           <div className="mb-8 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
             <div>
@@ -189,7 +197,7 @@ export default function PaymentsPage() {
           </div>
 
           {/* Metric Cards Grid */}
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {/* Total Collected */}
             <div className="relative overflow-hidden bg-gradient-to-br from-[#064e3b] to-emerald-600 p-5 rounded-xl shadow-md text-white after:content-[''] after:absolute after:-top-[15%] after:-right-[5%] after:w-[100px] after:h-[100px] after:bg-white/15 after:rounded-full">
               <div className="flex justify-between items-start mb-2">
@@ -359,8 +367,33 @@ export default function PaymentsPage() {
               </div>
             </div>
           </section>
-        </div>
-      </main>
+        </main>
+      </div>
+
+      {/* Bottom Nav Bar for Mobile UI */}
+      <nav className="fixed bottom-0 w-full z-50 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl flex justify-around items-center px-4 pb-6 pt-3 lg:hidden border-t border-[#c9c4d8]/30">
+        {[
+          { icon: 'dashboard', label: 'Dashboard', href: '/dashboard' },
+          { icon: 'receipt_long', label: 'Invoices', href: '/dashboard/invoices' },
+          { icon: 'payments', label: 'Payments', href: '/dashboard/payments', active: true },
+          { icon: 'group', label: 'Clients', href: '/dashboard/clients' },
+          { icon: 'settings', label: 'Settings', href: '/dashboard/settings' }
+        ].map((item) => (
+          <Link 
+            key={item.label} 
+            href={item.href}
+            className={`flex flex-col items-center justify-center rounded-full px-3 py-2 transition-transform duration-150 cursor-pointer active:scale-90 ${item.active ? 'text-[#064e3b]' : 'text-[#484555] opacity-70'}`}
+          >
+            <span className="material-symbols-outlined">{item.icon}</span>
+            <span className="text-[11px] font-semibold mt-0.5">{item.label}</span>
+          </Link>
+        ))}
+      </nav>
+
+      {/* Contextual Floating Action Button */}
+      <Link href="/dashboard/payments/recordpayment" className="fixed bottom-24 right-8 w-14 h-14 bg-[#064e3b] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all duration-200 z-40 lg:hidden">
+        <span className="material-symbols-outlined">add</span>
+      </Link>
     </div>
   );
 }
