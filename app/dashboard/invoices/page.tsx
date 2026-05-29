@@ -36,7 +36,7 @@ export default function InvoiceDashboard() {
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="/dashboard/invoices" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+          <Link href="/dashboard/invoices" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">receipt_long</span>
             <span className="text-sm font-medium">Invoices</span>
           </Link>

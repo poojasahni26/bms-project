@@ -95,32 +95,32 @@ export default function ReportsPage() {
             </button>
           </div>
 
-          <nav className="flex-1 space-y-1 text-lg px-4">
-            <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] rounded-lg transition-all">
-              <span className="material-symbols-outlined">dashboard</span>
-              <span className="text-sm font-medium">Dashboard</span>
-            </Link>
-            <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] rounded-lg transition-all">
-              <span className="material-symbols-outlined">receipt_long</span>
-              <span className="text-sm font-medium">Invoices</span>
-            </Link>
-            <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] rounded-lg transition-all">
-              <span className="material-symbols-outlined">payments</span>
-              <span className="text-sm font-medium">Payments</span>
-            </Link>
-            <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] rounded-lg transition-all">
-              <span className="material-symbols-outlined">group</span>
-              <span className="text-sm font-medium">Clients</span>
-            </Link>
-            <Link href="/dashboard/reports" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] rounded-lg transition-all">
-              <span className="material-symbols-outlined">analytics</span>
-              <span className="text-sm font-medium">Reports</span>
-            </Link>
-            <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] rounded-lg transition-all duration-200">
-              <span className="material-symbols-outlined">settings</span>
-              <span className="text-sm font-medium">Settings</span>
-            </Link>
-          </nav>
+         <nav className="flex-1 space-y-1 text-lg px-4">
+          <Link href="/dashboard" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+            <span className="material-symbols-outlined">dashboard</span>
+            <span className="text-sm font-medium">Dashboard</span>
+          </Link>
+          <Link href="/dashboard/invoices" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+            <span className="material-symbols-outlined">receipt_long</span>
+            <span className="text-sm font-medium">Invoices</span>
+          </Link>
+          <Link href="/dashboard/payments" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+            <span className="material-symbols-outlined">payments</span>
+            <span className="text-sm font-medium">Payments</span>
+          </Link>
+          <Link href="/dashboard/clients" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all">
+            <span className="material-symbols-outlined">group</span>
+            <span className="text-sm font-medium">Clients</span>
+          </Link>
+          <Link href="/dashboard/reports"className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+            <span className="material-symbols-outlined">analytics</span>
+            <span className="text-sm font-medium">Reports</span>
+          </Link>
+          <Link href="/dashboard/settings" className="text-[#064e3b] hover:text-white px-4 py-3 flex items-center gap-3 hover:bg-[#064e3b] transition-all duration-200">
+            <span className="material-symbols-outlined">settings</span>
+            <span className="text-sm font-medium">Settings</span>
+          </Link>
+        </nav>
 
           {/* User Profile Footer */}
           <div className="px-6 mb-10 flex items-center gap-3 border-t border-[#c9c4d8]/30 pt-4">

@@ -32,7 +32,7 @@ export default function Dashboard() {
         </div>
 
         <nav className="flex-1 space-y-1 text-lg px-4">
-          <Link href="/dashboard" className="text-white hover:text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
+          <Link href="/dashboard" className="text-white px-4 py-3 flex items-center gap-3 bg-[#064e3b] transition-all">
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
